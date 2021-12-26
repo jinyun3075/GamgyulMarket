@@ -1384,8 +1384,13 @@ body {
   background-image: url(../img/icon-user.png);
 }
 
+.m-container.chatroom {
+  position: relative;
+  background-color: #f2f2f2;
+}
+
 .m-container.chatroom .top-chat-nav {
-  width: 390px;
+  width: 100%;
   height: 48px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1426,7 +1431,9 @@ body {
 }
 
 .m-container.chatroom .comment {
-  width: 390px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;

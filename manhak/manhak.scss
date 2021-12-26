@@ -391,8 +391,10 @@ body {
 
 // Chat Room
 .m-container.chatroom{
+  position: relative;
+  background-color: #f2f2f2;
   .top-chat-nav{
-    width: 390px;
+    width: 100%;
     height: 48px;
     display: flex;
     justify-content: space-between;
@@ -425,7 +427,9 @@ body {
     }
   }
   .comment{
-    width: 390px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-between;
