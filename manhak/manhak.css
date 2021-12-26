@@ -1071,76 +1071,80 @@ body {
   height: 350px;
 }
 
+.m-container.album .pics div {
+  border: 1px solid black;
+}
+
 .m-container.album .pics .pic1 {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: grid1;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic2 {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: grid2;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic3 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: grid3;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic4 {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: grid4;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic5 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: grid5;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic6 {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: grid6;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic7 {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: grid7;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic8 {
   -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: grid8;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .pics .pic9 {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: grid9;
-  background: url("../img/orange.png");
-  background-size: 100%;
+  background: url("../img/Group.png") center center no-repeat;
+  background-size: 80px;
 }
 
 .m-container.album .tab-menu {
@@ -1206,6 +1210,177 @@ body {
 }
 
 .m-container.album .tab-menu .profile span {
+  background-image: url(../img/icon-user.png);
+}
+
+.m-container.chat {
+  position: relative;
+}
+
+.m-container.chat .top-basic-nav {
+  width: 100%;
+  border: #dbdbdb 1px solid;
+  height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
+}
+
+.m-container.chat .top-basic-nav .arrow {
+  cursor: pointer;
+  margin: 13px 16px;
+  background: url(../img/icon-arrow-left.png);
+  background-size: 22px;
+  width: 22px;
+  height: 22px;
+}
+
+.m-container.chat .top-basic-nav .more {
+  cursor: pointer;
+  margin: 12px 12px;
+  background: url(../img/more-icon.png);
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.m-container.chat .chat {
+  margin: 30px auto;
+  padding: 0px 20px;
+  width: 358px;
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.m-container.chat .chat .pic {
+  display: relative;
+  width: 42px;
+  height: 42px;
+  background: url(../img/basic-profile.png) center center no-repeat;
+  background-size: 42px;
+  margin-right: 10px;
+}
+
+.m-container.chat .chat .pic .alarm {
+  width: 12px;
+  height: 12px;
+  display: absolute;
+  background: #F26E22;
+  border-radius: 12px;
+}
+
+.m-container.chat .chat .pic .alarm-off {
+  display: none;
+}
+
+.m-container.chat .chat .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 220px;
+}
+
+.m-container.chat .chat .text div {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.m-container.chat .chat .text .title {
+  font-size: 14px;
+}
+
+.m-container.chat .chat .text .content {
+  font-size: 12px;
+  color: #767676;
+}
+
+.m-container.chat .chat .date {
+  -webkit-transform: translateY(28px);
+          transform: translateY(28px);
+  width: 60px;
+  height: 13px;
+  font-size: 10px;
+  color: #dbdbdb;
+  text-align: right;
+}
+
+.m-container.chat .tab-menu {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: white;
+  border-top: solid 1px #dbdbdb;
+}
+
+.m-container.chat .tab-menu div {
+  cursor: pointer;
+  width: 84px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m-container.chat .tab-menu div span {
+  margin: 12px 30px 0px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+}
+
+.m-container.chat .tab-menu div p {
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400px;
+  color: #767676;
+}
+
+.m-container.chat .tab-menu .home span {
+  background-image: url(../img/icon-home.png);
+}
+
+.m-container.chat .tab-menu .chatting span {
+  background-image: url(../img/icon-message-circle-fill.png);
+}
+
+.m-container.chat .tab-menu .chatting p {
+  color: #f26e22;
+}
+
+.m-container.chat .tab-menu .create span {
+  background-image: url(../img/icon-edit.png);
+}
+
+.m-container.chat .tab-menu .profile span {
   background-image: url(../img/icon-user.png);
 }
 /*# sourceMappingURL=manhak.css.map */
