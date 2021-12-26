@@ -1,0 +1,677 @@
+body{background-color: black; padding: 10px;} // <- 이건 추후삭제
+
+
+// font import
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+*{font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
+
+
+// home-post
+section.home-post {
+  /* padding: 20px 16px; */
+  width: 358px;
+  height: 434px;
+  background-color:#FFFFFF;
+  display: flex;
+  gap: 12px;
+  border: 0.5px solid #DBDBDB;
+}
+
+section.leftSide button.proPic img {
+  width: 42px;
+  height: 42px;
+}
+
+section.rightSide .menuWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuWrap .proId p:first-child {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.proId p:last-child {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #767676;
+  margin-bottom: 16px;
+}
+
+.menuWrap .menuBtn {
+  width: 20px;
+  height: 20px;
+}
+/* content */
+.rightSide .cntTxt p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.rightSide .cntImg img {
+  width: 304px;
+  height: 228px;
+  border: rgba(219, 219, 219, 1);
+  margin-bottom: 15px;
+}
+
+/* button */
+/* 버튼 reset */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btnWrap,
+.btnWrap .btnLike,
+.btnWrap .btnCmt {
+  display: flex;
+  gap: 19px;
+}
+
+.btnWrap .btnLike,
+.btnWrap .btnCmt {
+  gap: 8px;
+}
+
+.btnLike img {
+  width: 16px;
+  height: 15px;
+}
+
+.btnLike p,
+.btnCmt p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #767676;
+}
+
+.btnCmt img {
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5px;
+}
+/* date */
+.rightSide p.date {
+  padding: 19px 0 4px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #767676;
+}
+
+
+
+// home-post-onlytext
+section.home-post-onlytext {
+  /* padding: 20px 16px; */
+  width: 358px;
+  height: 190px;
+  background-color:#FFFFFF;
+  display: flex;
+  gap: 12px;
+  border: 0.5px solid #DBDBDB;
+}
+
+section.leftSide button.proPic img {
+  width: 42px;
+  height: 42px;
+}
+
+section.rightSide .menuWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuWrap .proId p:first-child {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.proId p:last-child {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #767676;
+  margin-bottom: 16px;
+}
+
+.menuWrap .menuBtn {
+  width: 20px;
+  height: 20px;
+}
+/* content */
+.rightSide .cntTxt p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+
+.rightSide .cntImg img {
+  width: 304px;
+  height: 228px;
+  border: rgba(219, 219, 219, 1);
+  margin-bottom: 15px;
+}
+
+/* button */
+/* 버튼 reset */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btnWrap,
+.btnWrap .btnLike,
+.btnWrap .btnCmt {
+  display: flex;
+  gap: 19px;
+}
+
+.btnWrap .btnLike,
+.btnWrap .btnCmt {
+  gap: 8px;
+}
+
+.btnLike img {
+  width: 16px;
+  height: 15px;
+}
+
+.btnLike p,
+.btnCmt p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #767676;
+}
+
+.btnCmt img {
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5px;
+}
+/* date */
+.rightSide p.date {
+  padding: 19px 0 4px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #767676;
+}
+
+
+// top-basic-nav
+.top-basic-nav{
+  width: 390px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  .arrow{
+    cursor: pointer;
+    margin: 13px 16px;
+    background: url(../img/icon-arrow-left.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .more{
+    cursor: pointer;
+    margin: 12px 12px;
+    background: url(../img/more-icon.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+// top-search-nav
+.top-search-nav{
+  width: 390px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  .arrow{
+    cursor: pointer;
+    margin: 13px 16px;
+    background: url(../img/icon-arrow-left.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .search{
+    width: 316px;
+    height: 32px;
+    margin: 8px 18px 8px 10px;
+    border: none;
+    border-radius: 32px;
+    background-color: #f2f2f2;
+    text-indent: 10px;
+    font-weight: 500;
+    color: #c4c4c4;
+  }
+}
+
+
+// top-main-nav
+.top-main-nav{
+  width: 390px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  .text{
+    width: 115px;
+    height: 22px;
+    font-weight: 500px;
+    font-size: 18px;
+    margin: 13px 16px;
+    color: black;
+  }
+  .search{
+    cursor: pointer;
+    margin: 12px 16px;
+    background: url(../img/icon-search.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+// top-upload-nav
+.top-upload-nav{
+  width: 390px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  .arrow{
+    cursor: pointer;
+    margin: 13px 16px;
+    background: url(../img/icon-arrow-left.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .save{
+    cursor: pointer;
+    margin: 8px 12px;
+    background-color: #ffc7a7;
+    width: 90px;
+    height: 32px;
+    border: none;
+    border-radius: 32px;
+    color: white;
+    font-size: 14px;
+  }
+}
+
+
+// top-chat-nav
+.top-chat-nav{
+  width: 390px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  .arrow{
+    cursor: pointer;
+    margin: 13px 10px 13px 16px;
+    background: url(../img/icon-arrow-left.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .text{
+    margin: 15px 10px 15px 0px;
+    background-size: 22px;
+    width: 284px;
+    height: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.53px;
+  }
+  .more{
+    cursor: pointer;
+    margin: 12px 12px;
+    background: url(../img/more-icon.png);
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+// tab-menu
+.tab-menu{
+  width: 390px;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  div{
+    cursor: pointer;
+    width: 84px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span{
+      margin: 12px 30px 0px;
+      width: 24px; height: 24px;
+      background-image: url(../img/icon-home.png);
+      background-size: 24px;
+    }
+    p{
+      margin-top: 3px;
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400px;
+      color: #767676;
+    }
+  }
+  .home{span{background-image: url(../img/icon-home.png);}}
+  .chatting{span{background-image: url(../img/icon-message-circle-1.png);}}
+  .create{span{background-image: url(../img/icon-edit.png);}}
+  .profile{span{background-image: url(../img/icon-user.png);}}
+}
+
+
+// comment
+.comment{
+  width: 390px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  .icon{
+    margin: 12px 16px;
+    width: 36px; height: 36px;
+    background-image: url(../img/basic-profile.png);
+    background-size: 36px;
+  }
+  .text{
+    font-size: 14px;
+    color: #c4c4c4;
+    border: none;
+    width: 256px;
+  }
+  .posting{
+    cursor: pointer;
+    font-size: 14px;
+    margin: 23px 16px 20px;
+    width: 30px; height: 18px;
+    color: #c4c4c4;
+  }
+}
+
+
+/* 유저 검색 */
+.user-search {
+    position: relative;
+    width: 358px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-search > img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+}
+
+.searchName {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5px;
+    left: 62px;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.searchFirstName  {
+    color: #F26E22;
+}
+
+.searchEmail {
+    position: absolute;
+    top: 29px;
+    left: 62px;
+    color: #767676;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+
+/* 팔로워 검색 */
+.user-follow {
+    position: relative;
+    width: 358px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-follow > img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+}
+
+.followersName {
+    position: relative;
+    top: 5px;
+    left: 62px;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.followersEmail {
+    position: absolute;
+    top: 29px;
+    left: 62px;
+    color: #767676;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.followBtn {
+    position: absolute;
+    top: 11px;
+    right: 0;
+    width: 56px;
+    height: 28px;
+    background: #F26E22;
+    border: none;
+    border-radius: 26px;
+    font-size: 12px;
+    /* line-height: 15px; */
+    color: white;
+    text-align: center;
+}
+
+
+/* 인풋 모듈 */
+.text-Activ-input {
+    position: relative;
+    width: 322px;
+    height: 47px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #DBDBDB;
+}
+
+.text-Activ-input:hover {
+    border-bottom: 1px solid #F26E22;
+    /* 마우스 오버했을 경우 아래 주황색 밑줄 표시 */
+    
+    /* 이메일 작성(focus)시에도 박스 아래선에 주황색 밑줄이 표시되도록 JS연결? if문 사용? */
+    /* 예를 들면 .loginInputId #inpId:focus 되었을때, text-Activ-input{border-bottom: 1px solid #F26E22;} 가 되도록 ?*/
+}
+
+.loginInputId .txt-hide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #767676;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.loginInputId #inpId {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    color: black;
+    font-size: 14px;
+    line-height: 14px;
+    border: none;
+}
+
+.loginInputId #inpId:focus {
+    outline: none;
+    /* 이메일 작성(focus)시, input의 아웃라인을 없애줌 */
+}
+
+
+// buttons
+.L-button {
+  width: 322px;
+  height: 44px;
+  border-radius: 44px ;
+  background: #F26E22;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.L-Disabled-button {
+  width: 322px;
+  height: 44px;
+  border-radius: 44px ;
+  background: #FFC7A7;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.M-button {
+  width: 120px;
+  height: 34px;
+  border-radius: 30px;
+  background-color: #F26E22;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 18px;
+  line-height: 18px;
+}
+.M-disabled-button {
+  width: 120px;
+  height: 34px;
+  border-radius: 30px;
+  background-color: #FFC7A7;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.M-Activ-butto {
+  width: 120px;
+  height: 34px;
+  border: 1px solid #DBDBDB;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #767676;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  box-sizing: border-box;
+}
+.Ms-button {
+  width: 90px;
+  height: 32px;
+  border-radius: 32px;
+  background-color: #F26E22;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.Ms-Disabled-button {
+  width: 90px;
+  height: 32px;
+  border-radius: 32px;
+  background-color: #FFC7A7;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.S-button {
+  width: 56px;
+  height: 28px;
+  border-radius: 26px;
+  background-color: #F26E22;
+  color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 12px;
+  font-weight: 400;
+  
+}
+.S-Activ-button {
+  width: 56px;
+  height: 28px;
+  border: 1px solid #DBDBDB;
+  border-radius: 26px;
+  background-color: #fff;
+  color: #767676;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 12px;
+  line-height: 15px;
+  box-sizing: border-box;
+}
+
