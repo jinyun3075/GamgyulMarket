@@ -2,7 +2,6 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 body {
   background-color: black;
-  padding: 10px;
 }
 
 * {
@@ -793,6 +792,10 @@ body {
   background-size: 200px auto;
 }
 
+.m-container.home {
+  position: relative;
+}
+
 .m-container.home .top-main-nav {
   position: fixed;
   top: 0px;
@@ -858,10 +861,9 @@ body {
 }
 
 .m-container.home .tab-menu {
-  position: fixed;
+  position: absolute;
   bottom: 0px;
-  width: 390px;
-  max-width: 390px;
+  width: 100%;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -921,6 +923,289 @@ body {
 }
 
 .m-container.home .tab-menu .profile span {
+  background-image: url(../img/icon-user.png);
+}
+
+.m-container.login {
+  background-color: #EA7F42;
+  position: relative;
+}
+
+.m-container.login .pic {
+  margin: 204px auto 0px;
+  width: 144px;
+  height: 144px;
+  background: url(../img/symbol-logo.png) center center no-repeat;
+  background-size: auto 144px;
+}
+
+.m-container.login article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  max-width: 390px;
+  height: 362px;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #767676;
+}
+
+.m-container.login article button {
+  width: 322px;
+  height: 44px;
+  border-radius: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.m-container.login article button::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateX(10px) translateY(-5px);
+          transform: translateX(10px) translateY(-5px);
+}
+
+.m-container.login article .kakao {
+  margin-top: 50px;
+  border: 1px solid #f2c94c;
+}
+
+.m-container.login article .kakao::before {
+  background: url("../img/message-circle.png");
+  background-size: 24px;
+}
+
+.m-container.login article .google {
+  border: 1px solid #767676;
+}
+
+.m-container.login article .google::before {
+  background: url("../img/Google__G__Logo 1.png");
+  background-size: 24px;
+}
+
+.m-container.login article .facebook {
+  margin-bottom: 20px;
+  border: 1px solid #2d9cdb;
+}
+
+.m-container.login article .facebook::before {
+  background: url("../img/facebook.png");
+  background-size: 24px;
+}
+
+.m-container.login article a {
+  display: inline-block;
+  font-size: 12px;
+  color: #767676;
+  margin: 0px 5px;
+}
+
+.m-container.album {
+  position: relative;
+  height: 520px;
+}
+
+.m-container.album .nav {
+  width: 100%;
+  height: 44px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  border: solid 1px #dbdbdb;
+}
+
+.m-container.album .nav div {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-right: 21px;
+}
+
+.m-container.album .nav .nav1 {
+  background: url(../img/icon-post-list-off.png);
+  background-size: 26px;
+}
+
+.m-container.album .nav .nav2 {
+  background: url(../img/icon-post-album-on.png);
+  background-size: 26px;
+}
+
+.m-container.album .pics {
+  margin: 0px auto;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'grid1 grid2 grid3' 'grid4 grid5 grid6' 'grid7 grid8 grid9';
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 8px;
+  -webkit-column-gap: 8px;
+          column-gap: 8px;
+  padding: 21px 0px;
+  width: 90%;
+  height: 350px;
+}
+
+.m-container.album .pics .pic1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: grid1;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: grid2;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: grid3;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: grid4;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: grid5;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: grid6;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic7 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: grid7;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic8 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: grid8;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .pics .pic9 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: grid9;
+  background: url("../img/orange.png");
+  background-size: 100%;
+}
+
+.m-container.album .tab-menu {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: white;
+  border-top: solid 1px #dbdbdb;
+}
+
+.m-container.album .tab-menu div {
+  cursor: pointer;
+  width: 84px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.m-container.album .tab-menu div span {
+  margin: 12px 30px 0px;
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+}
+
+.m-container.album .tab-menu div p {
+  margin-top: 3px;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400px;
+  color: #767676;
+}
+
+.m-container.album .tab-menu .home span {
+  background-image: url(../img/icon-home-fill.png);
+}
+
+.m-container.album .tab-menu .home p {
+  color: #f26e22;
+}
+
+.m-container.album .tab-menu .chatting span {
+  background-image: url(../img/icon-message-circle-1.png);
+}
+
+.m-container.album .tab-menu .create span {
+  background-image: url(../img/icon-edit.png);
+}
+
+.m-container.album .tab-menu .profile span {
   background-image: url(../img/icon-user.png);
 }
 /*# sourceMappingURL=manhak.css.map */

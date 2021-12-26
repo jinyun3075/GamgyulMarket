@@ -1,10 +1,10 @@
 @import "../module/module";
 
-body{
+body {
   background-color: black;
   box-sizing: border-box;
 }
-.m-container{
+.m-container {
   background-color: white;
   width: 100vw;
   max-width: 390px;
@@ -13,8 +13,8 @@ body{
 }
 
 // Splash_Screen
-.m-container.splash{
-  .img{
+.m-container.splash {
+  .img {
     display: block;
     margin: 270px auto 0px;
     width: 200px;
@@ -25,8 +25,9 @@ body{
 }
 
 // Home
-.m-container.home{
-  .top-main-nav{
+.m-container.home {
+  position: relative;
+  .top-main-nav {
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -36,7 +37,7 @@ body{
     justify-content: space-between;
     background-color: white;
     border-bottom: solid 1px #dbdbdb;
-    .text{
+    .text {
       width: 115px;
       height: 22px;
       font-weight: 500px;
@@ -44,7 +45,7 @@ body{
       margin: 13px 16px;
       color: black;
     }
-    .search{
+    .search {
       cursor: pointer;
       margin: 12px 16px;
       background: url(../img/icon-search.png);
@@ -81,29 +82,28 @@ body{
     font-weight: 18px;
     line-height: 18px;
   }
-  .tab-menu{
-    position: fixed;
+  .tab-menu {
+    position: absolute;
     bottom: 0px;
-    width: 390px;
-    max-width: 390px;
+    width: 100%;
     height: 60px;
     display: flex;
     justify-content: space-evenly;
     background-color: white;
     border-top: solid 1px #dbdbdb;
-    div{
+    div {
       cursor: pointer;
       width: 84px;
       height: 60px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      span{
+      span {
         margin: 12px 30px 0px;
         width: 24px; height: 24px;
         background-size: 24px;
       }
-      p{
+      p {
         margin-top: 3px;
         font-size: 10px;
         line-height: 14px;
@@ -118,4 +118,157 @@ body{
   }
 }
 
-// 
+// Login
+.m-container.login {
+  background-color: #EA7F42;
+  position: relative;
+  .pic {
+    margin: 204px auto 0px;
+    width: 144px;
+    height: 144px;
+    background: url(../img/symbol-logo.png) center center no-repeat;
+    background-size: auto 144px;
+  }
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    max-width: 390px;
+    height: 362px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #767676;
+    button {
+      width: 322px;
+      height: 44px;
+      border-radius: 44px;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      &::before {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 24px;
+        height: 24px;
+        transform: translateX(10px) translateY(-5px);
+      }
+    }
+    .kakao {
+      margin-top: 50px;
+      border: 1px solid #f2c94c;
+      &::before {
+        background: url('../img/message-circle.png');
+        background-size: 24px;
+      }
+    }
+    .google {
+      border: 1px solid #767676;
+      &::before {
+        background: url('../img/Google__G__Logo\ 1.png');
+        background-size: 24px;
+      }
+    }
+    .facebook {
+      margin-bottom: 20px;
+      border: 1px solid #2d9cdb;
+      &::before {
+        background: url('../img/facebook.png');
+        background-size: 24px;
+      }
+    }
+    a {
+      display: inline-block;
+      font-size: 12px;
+      color: #767676;
+      margin: 0px 5px;
+    }
+  } 
+}
+
+// Album
+.m-container.album {
+  position: relative;
+  height: 520px;
+  .nav {
+    width: 100%;
+    height: 44px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: solid 1px #dbdbdb;
+    div{
+      display: inline-block;
+      width: 26px; height: 26px;
+      margin-right: 21px;
+    }
+    .nav1 {
+      background: url(../img/icon-post-list-off.png);
+      background-size: 26px;
+    }
+    .nav2 {
+      background: url(../img/icon-post-album-on.png);
+      background-size: 26px;
+    }
+  }
+  .pics {
+    margin: 0px auto;
+    display: grid;
+    grid-template-areas: 
+    'grid1 grid2 grid3'
+    'grid4 grid5 grid6'
+    'grid7 grid8 grid9';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 8px; column-gap: 8px; padding: 21px 0px;
+    width: 90%; height: 350px;
+    .pic1{grid-area: grid1; background: url('../img/orange.png'); background-size: 100%;}
+    .pic2{grid-area: grid2; background: url('../img/orange.png'); background-size: 100%;}
+    .pic3{grid-area: grid3; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic4{grid-area: grid4; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic5{grid-area: grid5; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic6{grid-area: grid6; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic7{grid-area: grid7; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic8{grid-area: grid8; background: url('../img/orange.png'); background-size: 100%;} 
+    .pic9{grid-area: grid9; background: url('../img/orange.png'); background-size: 100%;} 
+  }
+  .tab-menu {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    border-top: solid 1px #dbdbdb;
+    div {
+      cursor: pointer;
+      width: 84px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      span {
+        margin: 12px 30px 0px;
+        width: 24px; height: 24px;
+        background-size: 24px;
+      }
+      p {
+        margin-top: 3px;
+        font-size: 10px;
+        line-height: 14px;
+        font-weight: 400px;
+        color: #767676;
+      }
+    }
+    .home{span{background-image: url(../img/icon-home-fill.png);}p{color:#f26e22;}}
+    .chatting{span{background-image: url(../img/icon-message-circle-1.png);}}
+    .create{span{background-image: url(../img/icon-edit.png);}}
+    .profile{span{background-image: url(../img/icon-user.png);}}
+  }
+}
