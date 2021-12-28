@@ -14,7 +14,7 @@
       <h2 class="blind">상단채팅네비게이션</h2>
       <div class="arrow"></div>
       <div class="text">애월읍 위니브 감귤농장</div>
-      <div class="more"></div>
+      <div class="more"><div class="modal"></div></div>
     </section>
     <section class="chat-container">
       <div class="you">
@@ -46,7 +46,31 @@
     </section>
   </section>
   <script>
-    
+    let posting = document.querySelector(".posting")
+    let chat = document.querySelector(".chat-container");
+    posting.addEventListener('click', chatevent);
+    function chatevent(event) {
+      // 채팅메세지 객체
+      let message = document.querySelector(".comment .text").value;
+      console.log(message);
+      // 현재시각 객체
+      let now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+
+      const mymessage = document.createElement('div');
+      mymessage.innerHTML = `
+        <div class="time"><span>${hours}:${minutes}</span></div>
+        <div class="chat">${message}</div>
+        <div class="space"></div>
+      `;
+      mymessage.classList.add('me');     
+      chat.appendChild(mymessage);
+    }
+
+    let modal = document.querySelector('.more');
+    modal.addEventListener('click', modalevent);
+    function modalevent(event) {}     
   </script>
 </body>
 </html>
