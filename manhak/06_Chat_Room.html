@@ -45,7 +45,10 @@
       <div class="posting">전송</div>
     </section>
   </section>
+
   <script>
+
+    // (1. 채팅구현)
     let posting = document.querySelector(".posting")
     let chat = document.querySelector(".chat-container");
     posting.addEventListener('click', chatevent);
@@ -57,7 +60,7 @@
       let now = new Date();
       let hours = now.getHours();
       let minutes = now.getMinutes();
-
+      // 채팅창 삽입하기
       const mymessage = document.createElement('div');
       mymessage.innerHTML = `
         <div class="time"><span>${hours}:${minutes}</span></div>
@@ -68,9 +71,11 @@
       chat.appendChild(mymessage);
     }
 
+    // (2. 모달창구현) 
     let modal = document.querySelector('.more');
     modal.addEventListener('click', modalevent);
-    function modalevent(event) {}     
+    function modalevent(event) {} 
+        
   </script>
 </body>
 </html>
