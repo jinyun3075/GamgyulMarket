@@ -1,0 +1,105 @@
+@font-face {
+  src: url(../fonts/SpoqaHanSansNeo-Regular.ttf);
+  font-family: Spoqa Han Sans Neo;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Spoqa Han Sans Neo;
+  background-color: grey;
+}
+
+#join-membership_2 {
+  margin: 10px auto;
+  background-color: white;
+  height: 826px;
+  width: 390px;
+  padding: 30px 34px;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 텍스트 */
+.cont .tit-txt {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+.cont .tit-txt + p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #767676;
+}
+
+/* 프로필 */
+.cont .profile {
+  width: 110px;
+  height: 110px;
+  margin: 30px 0;
+  position: relative;
+}
+
+.profile img:first-child {
+  width: 110px;
+  height: 110px;
+}
+
+.profile img:last-child {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* 인풋 */
+.cont .inp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inp-wrap .inp {
+  width: 322px;
+  height: 58px;
+  border-bottom: 1px solid #DBDBDB;
+  color: #767676;
+}
+
+.inp p {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.inp input {
+  border: none;
+  width: 322px;
+  height: 33px;
+}
+
+.inp.email {
+  margin-bottom: 16px;
+}
+/* 버튼 */
+.cont .btn {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  margin: 30px 0 20px;
+  background-color: #FFC7A7;
+}
+
+.cont .btn:focus {
+  background-color: #F26E22;
+}
