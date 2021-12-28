@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="./manhak.css">
+<title>Chat Room</title>
+</head>
+<body>
+  <section class="m-container chatroom">
+    <section class="top-chat-nav">
+      <h2 class="blind">상단채팅네비게이션</h2>
+      <div class="arrow"></div>
+      <div class="text">애월읍 위니브 감귤농장</div>
+      <div class="more"><div class="modal"></div></div>
+    </section>
+    <section class="chat-container">
+      <div class="you">
+        <div class="pic"></div>
+        <div class="chat">웃을 인생을 그러므로 없으면 것은 이상의 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 악동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</div>
+        <div class="time"><span>12:39</span></div>
+      </div>
+      <div class="you">
+        <div class="pic"></div>
+        <div class="chat">안녕하세요. 감귤 사고싶어요요요요요</div>
+        <div class="time"><span>12:41</span></div>
+      </div>
+      <div class="me">
+        <div class="time"><span>12:50</span></div>
+        <div class="chat">네 말씀하세요.</div>
+        <div class="space"></div>
+      </div>
+      <div class="me">
+        <div class="time"><span>12:51</span></div>
+        <div class="chat"><img src="../img/smile.gif" height="220px" alt="이미지를 보냈습니다"></div>
+        <div class="space"></div>
+      </div>
+    </section>
+    <section class="comment">
+      <h2 class="blind">코멘트</h2>
+      <div class="icon"></div>
+      <input class="text" placeholder="댓글 입력하기"></input>
+      <div class="posting">전송</div>
+    </section>
+  </section>
+
+  <script>
+
+    // (1. 채팅구현)
+    let posting = document.querySelector(".posting")
+    let chat = document.querySelector(".chat-container");
+    posting.addEventListener('click', chatevent);
+    function chatevent(event) {
+      // 채팅메세지 객체
+      let message = document.querySelector(".comment .text").value;
+      console.log(message);
+      // 현재시각 객체
+      let now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      // 채팅창 삽입하기
+      const mymessage = document.createElement('div');
+      mymessage.innerHTML = `
+        <div class="time"><span>${hours}:${minutes}</span></div>
+        <div class="chat">${message}</div>
+        <div class="space"></div>
+      `;
+      mymessage.classList.add('me');     
+      chat.appendChild(mymessage);
+    }
+
+    // (2. 모달창구현) 
+    let modal = document.querySelector('.more');
+    modal.addEventListener('click', modalevent);
+    function modalevent(event) {} 
+        
+  </script>
+</body>
+</html>
