@@ -302,14 +302,15 @@ body {
     }
   }
   .chat{
+    box-sizing: border-box;
     margin: 30px auto;
-    padding: 0px 20px;
-    width: 358px;
+    width: 90%;
     height: 42px;
     display: flex;
     .pic{
       display: relative;
-      width: 42px;
+      flex: 1;
+      min-width: 45px;
       height: 42px;
       background: url(../img/basic-profile.png) center center no-repeat;
       background-size: 42px;
@@ -320,18 +321,19 @@ body {
         display: absolute;
         background: #F26E22;
         border-radius: 12px;
+        transform: translateX(5px);
       }
       .alarm-off{
         display: none;
       }
     }
     .text{
+      flex: 4;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      width: 220px;
       div{
-        width: 100%;
+        max-width: 170px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -345,8 +347,9 @@ body {
       }
     }
     .date{
+      flex: 1;
+      min-width: 60px;
       transform: translateY(28px);
-      width: 60px;
       height: 13px;
       font-size: 10px;
       color: #dbdbdb;
@@ -435,9 +438,9 @@ body {
     justify-content: space-between;
     background-color: white;
     .icon{
-      margin: 12px 16px;
-      width: 36px; height: 36px;
-      background-image: url(../img/img-button.png);
+      width: 50px; height: 36px;
+      margin-left: 12px;
+      background: url(../img/img-button.png) center center no-repeat;
       background-size: 36px;
     }
     .text{
@@ -450,7 +453,7 @@ body {
       cursor: pointer;
       font-size: 14px;
       margin: 23px 16px 20px;
-      width: 30px; height: 18px;
+      width: 40px; height: 18px;
       color: #c4c4c4;
     }
   }
