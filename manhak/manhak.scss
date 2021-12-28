@@ -1,4 +1,4 @@
-@import "../module/module";
+// @import "../module/module";
 
 body {
   background-color: black;
@@ -144,6 +144,8 @@ body {
     button {
       width: 322px;
       height: 44px;
+      background-color: white;
+      color: #767676;
       border-radius: 44px;
       font-size: 14px;
       font-weight: 400;
@@ -507,8 +509,7 @@ body {
     justify-content: space-between;
     background-color: white;
     .icon {
-      width: 50px; height: 36px;
-      margin-left: 12px;
+      width: 50px; height: 60px;
       background: url(../img/img-button.png) center center no-repeat;
       background-size: 36px;
     }
