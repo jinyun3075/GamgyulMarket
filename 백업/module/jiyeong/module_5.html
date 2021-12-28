@@ -124,24 +124,15 @@
             background-color: white;
             display: flex;
             flex-direction: row;
-        }
-
-        .text-Activ-input .inp-login {
-            width: 100%;
-            box-sizing: border-box;
-            position: absolute;
-            top: 25px;
-            left: 0;
-            color: black;
-            font-size: 14px;
-            line-height: 14px;
-            border: none;
             border-bottom: 1px solid #DBDBDB;
         }
 
-        .text-Activ-input .inp-login:focus {
+        .text-Activ-input:hover {
             border-bottom: 1px solid #F26E22;
-            outline: none;
+            /* 마우스 오버했을 경우 아래 주황색 밑줄 표시 */
+            
+            /* 이메일 작성(focus)시에도 박스 아래선에 주황색 밑줄이 표시되도록 JS연결? if문 사용? */
+            /* 예를 들면 .loginInputId #inpId:focus 되었을때, text-Activ-input{border-bottom: 1px solid #F26E22;} 가 되도록 ?*/
         }
 
         .loginInputId .txt-hide {
@@ -161,7 +152,7 @@
             color: black;
             font-size: 14px;
             line-height: 14px;
-            /* border: none; */
+            border: none;
         }
 
         .loginInputId #inpId:focus {
