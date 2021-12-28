@@ -67,7 +67,6 @@ body {
     font-weight: 400;
     text-align: center;
     color: #767676;
-
   }
   .M-button {
     display: block;
@@ -202,7 +201,7 @@ body {
     align-items: center;
     justify-content: right;
     border: solid 1px #dbdbdb;
-    div{
+    div {
       display: inline-block;
       width: 26px; height: 26px;
       margin-right: 21px;
@@ -275,16 +274,16 @@ body {
 }
 
 // Chat List
-.m-container.chat{
+.m-container.chat {
   position: relative;
-  .top-basic-nav{
+  .top-basic-nav {
     width: 100%;
     border: #dbdbdb 1px solid;
     height: 48px;
     display: flex;
     justify-content: space-between;
     background-color: white;
-    .arrow{
+    .arrow {
       cursor: pointer;
       margin: 13px 16px;
       background: url(../img/icon-arrow-left.png);
@@ -292,7 +291,7 @@ body {
       width: 22px;
       height: 22px;
     }
-    .more{
+    .more {
       cursor: pointer;
       margin: 12px 12px;
       background: url(../img/more-icon.png);
@@ -301,13 +300,13 @@ body {
       height: 24px;
     }
   }
-  .chat{
+  .chat {
     box-sizing: border-box;
     margin: 30px auto;
     width: 90%;
     height: 42px;
     display: flex;
-    .pic{
+    .pic {
       display: relative;
       flex: 1;
       min-width: 45px;
@@ -315,7 +314,7 @@ body {
       background: url(../img/basic-profile.png) center center no-repeat;
       background-size: 42px;
       margin-right: 10px;
-      .alarm{
+      .alarm {
         width: 12px;
         height: 12px;
         display: absolute;
@@ -323,22 +322,22 @@ body {
         border-radius: 12px;
         transform: translateX(5px);
       }
-      .alarm-off{
+      .alarm-off {
         display: none;
       }
     }
-    .text{
+    .text {
       flex: 4;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      div{
+      div {
         max-width: 170px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      .title{
+      .title {
         font-size: 14px;
       }
       .content{
@@ -428,6 +427,9 @@ body {
       width: 24px;
       height: 24px;
     }
+  }
+  .you{
+    
   }
   .comment{
     position: absolute;
