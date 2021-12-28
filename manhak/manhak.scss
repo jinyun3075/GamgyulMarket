@@ -514,9 +514,12 @@ body {
     }
     .text {
       font-size: 14px;
-      color: #c4c4c4;
       border: none;
       width: 256px;
+      &:focus~.posting{
+        color: #FFA200;
+        font-weight: bold;
+      }
     }
     .posting {
       cursor: pointer;

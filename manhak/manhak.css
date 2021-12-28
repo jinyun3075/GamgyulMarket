@@ -1576,9 +1576,13 @@ body {
 
 .m-container.chatroom .comment .text {
   font-size: 14px;
-  color: #c4c4c4;
   border: none;
   width: 256px;
+}
+
+.m-container.chatroom .comment .text:focus ~ .posting {
+  color: #FFA200;
+  font-weight: bold;
 }
 
 .m-container.chatroom .comment .posting {
