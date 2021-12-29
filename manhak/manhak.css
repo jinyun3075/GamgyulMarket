@@ -823,4 +823,21 @@ body {
   height: 18px;
   color: #c4c4c4;
 }
+
+.m-container.chatroom .modal {
+  display: none;
+  position: fixed;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  top: 50px;
+  width: 100%;
+  max-width: 390px;
+  height: 60px;
+  padding: 20px;
+  background-color: white;
+}
+
+.m-container.chatroom .modal-on {
+  display: block;
+}
 /*# sourceMappingURL=manhak.css.map */

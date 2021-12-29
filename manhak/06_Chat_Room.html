@@ -14,8 +14,9 @@
       <h2 class="blind">상단채팅네비게이션</h2>
       <div class="arrow"></div>
       <div class="text">애월읍 위니브 감귤농장</div>
-      <div class="more"><div class="modal"></div></div>
+      <div class="more"></div>
     </section>
+    <div class="modal">채팅방 나가기</div>
     <section class="chat-container">
       <div class="you">
         <div class="pic"></div>
@@ -50,9 +51,19 @@
 
     // (1. 채팅구현)
     let posting = document.querySelector(".posting")
+    let text = document.querySelector(".comment .text");
     let chat = document.querySelector(".chat-container");
+    
     posting.addEventListener('click', chatevent);
-    function chatevent(event) {
+    text.addEventListener('keyup', chatevent_text);
+
+    function chatevent_text(event) {
+      // 엔터입력시 chatevent 호출
+      if (event.key === 'Enter') {
+        chatevent();
+      }
+    }
+    function chatevent() {
       // 채팅메세지 객체
       let message = document.querySelector(".comment .text").value;
       console.log(message);
@@ -68,14 +79,18 @@
         <div class="chat">${message}</div>
         <div class="space"></div>
       `;
-      mymessage.classList.add('me');     
+      mymessage.classList.add('me');
       chat.appendChild(mymessage);
+      // 채팅인풋 비우기
+      text.value = '';
     }
 
     // (2. 모달창구현) 
     let modal = document.querySelector('.more');
     modal.addEventListener('click', modalevent);
-    function modalevent(event) {} 
+    function modalevent(event) {
+      document.querySelector('.modal').classList.toggle('modal-on');
+    } 
         
   </script>
 </body>
