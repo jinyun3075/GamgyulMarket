@@ -60,6 +60,7 @@
       let now = new Date();
       let hours = now.getHours();
       let minutes = now.getMinutes();
+      if (minutes < 11) {minutes = '0' + minutes;}; 
       // 채팅창 삽입하기
       const mymessage = document.createElement('div');
       mymessage.innerHTML = `
