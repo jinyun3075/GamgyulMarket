@@ -88,14 +88,20 @@ body {
   background-image: url(../img/icon-user.png);
 }
 
-/* 홈 마우스 오버시 주황색 글씨가 되도록 구현 */
-.tab-menu div p:hover{
+/* 마우스 오버시 주황색 글씨가 되도록 구현 */
+.tab-menu .home span:hover {
+  background-image: url(../img/icon-home-fill.png);
+}
+.tab-menu .chatting span:hover {
+  background-image: url(../img/icon-message-circle-fill.png);
+}
+.tab-menu .profile span:hover {
+  background-image: url(../img/icon-user-fill.png);
+}
+/* 형제선택자 활용 */
+.tab-menu div span:hover ~ p {
   color: #F26E22;
-}
-.tab-menu .home span:hover{
-  background-image: url(../img/icon-home2.png);
-}
-
+} 
 
  /* home-post */
 section.home-post {
