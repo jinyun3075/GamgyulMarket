@@ -5,7 +5,8 @@
 * {
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.followers {
+/* 전체 */
+.followers { 
   max-width: 390px;
 }
 .followers .follow-search{
@@ -36,9 +37,11 @@
     height: 24px;
 }
 
+/* list */
 .follow-list {
   border-top: 1px solid rgba(118 , 118, 118, 0.2);
   padding-top: 8px;
+  /* margin-left: 10px; */
 }
 .follow-list li {
   position: relative;
@@ -49,7 +52,6 @@
   flex-direction: row;
   margin-top: 16px;
 }
-
 .follow-list li > img {
   position: absolute;
   width: 50px;
@@ -57,7 +59,6 @@
   top: 0;
   left: 0;
 }
-
 .follow-list .followersName {
   position: relative;
   top: 5px;
@@ -67,7 +68,6 @@
   font-size: 14px;
   line-height: 18px;
 }
-
 .follow-list .followersEmail {
   position: absolute;
   top: 29px;
@@ -76,7 +76,6 @@
   font-size: 12px;
   line-height: 15px;
 }
-
 .follow-list .followBtn {
   position: absolute;
   top: 11px;
@@ -98,6 +97,7 @@
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
+/* footer */
 .tab-menu {
   display: flex;
   bottom: 0;
