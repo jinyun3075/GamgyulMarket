@@ -5,7 +5,7 @@
 * {
   font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-/* 전체 */
+/* yourprofile */
 .followers { 
   max-width: 390px;
 }
@@ -141,3 +141,5 @@
 .tab-menu .profile span{
   background-image: url(../img/icon-user.png);
 }
+
+/* add_product */
