@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+#login-email-join {
+  margin: 10px auto;
+  background-color: white;
+  height: 826px;
+  width: 390px;
+  padding: 30px 34px;
+}
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+/* 텍스트 */
+.cont .tit-txt {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+/* 인풋 */
+.email {
+  margin-bottom: 16px;
+}
+.loginInputId #inpId {
+  /* placeholder 잘리는거 방지하기 위해 add */
+  width: 300px;
+}
+/* placeholder */
+input::-webkit-input-placeholder {
+  color: #DBDBDB;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* 버튼 */
+.btn {
+  margin: 30px 0 20px;
+}
+.btn:hover {
+  background: #F26E22;
+  transition: 1s;
+}
+
+/* 링크 */
+.cont a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #767676;
+}
