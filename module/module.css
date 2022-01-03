@@ -644,11 +644,11 @@ button {
 
 .loginInputId #inpId {
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 0;
   color: black;
-  font-size: 14px;
-  line-height: 14px;
+  /* font-size: 14px;
+  line-height: 14px; */
   border: none;
 }
 
@@ -738,7 +738,6 @@ button {
   border-radius: 32px;
   background-color: #FFC7A7;
   color: #fff;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -750,7 +749,6 @@ button {
   border-radius: 26px;
   background-color: #F26E22;
   color: #fff;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 12px;
   font-weight: 400;
 }
@@ -762,7 +760,6 @@ button {
   border-radius: 26px;
   background-color: #fff;
   color: #767676;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 12px;
   line-height: 15px;
   -webkit-box-sizing: border-box;
