@@ -1,17 +1,3 @@
-@font-face {
-  src: url(../fonts/SpoqaHanSansNeo-Regular.ttf);
-  font-family: Spoqa Han Sans Neo;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Spoqa Han Sans Neo;
-  background-color: grey;
-}
-
 #join-membership_2 {
   margin: 10px auto;
   background-color: white;
@@ -63,43 +49,9 @@ body {
 }
 
 /* 인풋 */
-.cont .inp-wrap {
+.inp-wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
-.inp-wrap .inp {
-  width: 322px;
-  height: 58px;
-  border-bottom: 1px solid #DBDBDB;
-  color: #767676;
-}
-
-.inp p {
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 15px;
-}
-
-.inp input {
-  border: none;
-  width: 322px;
-  height: 33px;
-}
-
-.inp.email {
-  margin-bottom: 16px;
-}
 /* 버튼 */
-.cont .btn {
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  margin: 30px 0 20px;
-  background-color: #FFC7A7;
-}
-
-.cont .btn:focus {
-  background-color: #F26E22;
-}
