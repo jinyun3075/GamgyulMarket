@@ -1,0 +1,104 @@
+body {
+    background-color: #DBDBDB;
+}
+
+.top-upload-nav {
+    width: 390px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: white;
+}
+
+.top-upload-nav .arrow {
+    cursor: pointer;
+    margin: 13px 16px;
+    background: url(../img/icon-arrow-left.png);
+    background-size: 22px;
+    width: 22px;
+    height: 22px;
+}
+
+.top-upload-nav .save {
+    cursor: pointer;
+    margin: 8px 12px;
+    background-color: #ffc7a7;
+    width: 90px;
+    height: 32px;
+    border: none;
+    border-radius: 32px;
+    color: white;
+    font-size: 14px;
+    transition: all .3s;
+}
+
+.top-upload-nav .save:hover {
+    background-color: #F26E22;
+}
+
+.modificationProfile {
+    width: 390px;
+    height: 772px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+    border-top: .5px solid #DBDBDB;
+    flex-direction: column;
+
+}
+
+.modificationProfile .imageBox {
+    margin: 30px 0;
+    width: 110px;
+    height: 110px;
+    position: relative;
+}
+.modificationProfile .imageBox .imgUpdate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/upload-file.png);
+    background-size: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modificationProfile .properties {
+    width: 322px;
+    height: 176px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.properties div {
+    width: 322px;
+    height: 48px;
+    background-color: white;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom: 1px solid #DBDBDB;
+}
+.properties div p {
+    font-size: 12px;
+    color: #767676;
+    margin-bottom: 10px;
+}
+.properties div input {
+    padding: 0;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+}
+.properties div input::placeholder {
+    color: #DBDBDB;
+}
