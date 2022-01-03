@@ -45,6 +45,11 @@ body {
     color: #c4c4c4;
 }
 
+.top-search-nav .search:focus {
+  color: #000
+  /* 추가함(2022.1.3.) */
+}
+
 /* 검색 리스트 */
 .searchBefore {
   width: 390px;
