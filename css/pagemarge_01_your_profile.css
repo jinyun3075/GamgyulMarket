@@ -201,6 +201,16 @@ body {
     font-size: 14px;
     font-weight: 500;
 }
+.profileButtonBox .unfollowButton{
+    width: 120px;
+    height: 34px;
+    background-color: #ffffff;
+    border: 1px solid #767676;
+    border-radius: 30px;
+    color: #767676;
+    font-size: 14px;
+    font-weight: 500;
+}
 .profileButtonBox .shareButton{
     width: 34px;
     height: 34px;
@@ -212,6 +222,7 @@ body {
     border : 0.5px solid #DBDBDB;
     border-radius: 50%;
 }
+
 
 /* sellProduct */
 
@@ -327,7 +338,7 @@ body {
 section.home-post {
     padding: 20px 16px;
     width: 358px;
-    height: 434px;
+    height: 494px;
     background-color:#FFFFFF;
     display: flex;
     gap: 12px;
@@ -361,6 +372,116 @@ section.rightSide .menuWrap {
 .menuWrap .menuBtn {
     width: 20px;
     height: 20px;
+}
+
+/* album */
+.m-container {
+    background-color: white;
+    width: 100vw;
+    max-width: 390px;
+    height: 884px;
+    overflow: hidden;
+}
+
+.m-container.album {
+    display: none;
+    position: relative;
+    height: 534px;
+}
+
+.m-container.album .pics {
+    margin: 0px auto;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'grid1 grid2 grid3'
+'grid4 grid5 grid6'
+'grid7 grid8 grid9';
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 8px;
+    -webkit-column-gap: 8px;
+            column-gap: 8px;
+    padding: 21px 0px;
+    width: 90%;
+    height: 350px;
+}
+
+.m-container.album .pics div {
+    border: 1px solid black;
+}
+
+.m-container.album .pics .pic1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: grid1;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: grid2;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: grid3;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic4 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: grid4;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic5 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: grid5;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic6 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: grid6;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic7 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: grid7;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic8 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: grid8;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
+}
+
+.m-container.album .pics .pic9 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: grid9;
+    background: url("../img/Group.png") center center no-repeat;
+    background-size: 80px;
 }
 
 /* content */
@@ -428,4 +549,43 @@ button {
     font-weight: 400;
     line-height: 12px;
     color: #767676;
+}
+
+.icon-post-modal {
+    display: none;
+    position: fixed;
+    width: 390px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+}
+.icon-post-modal .modalBox {
+    width: 390px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 10px;
+}
+.modalBox .topBar {
+    width: 50px;
+    height: 4px;
+    margin: 16px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #DBDBDB;
+    cursor: pointer;
+}
+.modalBox .infoBox, .modalBox .logoutBox {
+    width: 390px;
+    height: 46px;
+    box-sizing: border-box;
+    padding: 14px 26px;
+    font-size: 14px;
+    cursor: pointer;
 }
