@@ -12,9 +12,17 @@
 /* 나중에 삭제하기 */
 body {
   background-color: pink;
-} 
-
-
+}
+.homepostBox {
+  overflow: scroll;
+  width: 407px;
+  height: 760px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.homepostBox::-webkit-scrollbar {
+  display: none;
+}
 /* --------------------------------------- Home --------------------------------------- */
 
 /* 홈, 채팅, 게시물 작성, 프로필 */
@@ -22,7 +30,7 @@ body {
   display: flex;
   bottom: 0;
   position: absolute;
-  top: 1182px;
+  top: 760px;
   left: 0;
   width: 390px;
   height: 60px;
@@ -106,7 +114,6 @@ body {
   width: 24px;
   height: 24px;
 }
-
  /* home-post */
 section.home-post {
   padding: 20px 16px;

@@ -19,106 +19,7 @@
         <div class="search"></div>
     </section>
 
-    <div class="homepostBox">
-        <!-- home-post -->
-        <!-- 게시물 1 -->
-        <section class="home-post">
-            <section class="leftSide">
-            <button type="button" class="proPic"><img src="../img/basic-profile-img-.png" alt="프로필이미지"></button>
-            </section>
-            <section class="rightSide">
-            <div class="menuWrap">
-                <div class="proId">
-                <p>애월읍 위니브 감귤농장</p>
-                <p>@ weniv_Mandarin</p>
-                </div>
-                <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘"></button>
-            </div>
-            <div class="cntTxt">
-                <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
-            </div>
-            <div class="cntImg">
-                <img src="../img/content.png" alt="콘텐트이미지">
-            </div>
-            <div class="btnWrap">
-                <div class="btnLike">
-                <button type="button"><img src="../img/icon-heart.png" alt="좋아요아이콘"></button>
-                <p>58</p>
-                </div>
-                <div class="btnCmt">
-                <button type="button"><img src="../img/icon-message-circle.png" alt="댓글아이콘"></button>
-                <p>12</p>
-                </div>
-            </div>
-            <p class="date">2020년 10월 21일</p>
-            </section>
-        </section>
-
-        <!-- home-post -->
-        <!-- 게시물 2 -->
-        <section class="home-post2">
-            <section class="leftSide">
-            <button type="button" class="proPic"><img src="../img/basic-profile2.png" alt="프로필이미지"></button>
-            </section>
-            <section class="rightSide">
-            <div class="menuWrap">
-                <div class="proId">
-                <p>서귀포시 한라봉 타운</p>
-                <p>@ hanlabong22</p>
-                </div>
-                <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘"></button>
-            </div>
-            <div class="cntTxt">
-                <p>감귤 잘 자라는 중...🧡</p>
-            </div>
-            <div class="cntImg">
-                <img src="../img/content2.png" alt="콘텐트이미지">
-            </div>
-            <div class="btnWrap">
-                <div class="btnLike">
-                <button type="button"><img src="../img/icon-heart2.png" alt="좋아요아이콘"></button>
-                <p>58</p>
-                </div>
-                <div class="btnCmt">
-                <button type="button"><img src="../img/icon-message-circle.png" alt="댓글아이콘"></button>
-                <p>12</p>
-                </div>
-            </div>
-            <p class="date">2020년 10월 21일</p>
-            </section>
-        </section>
-        
-        <!-- home-post-onlytext -->
-        <!-- 게시물 3 -->
-        <section class="home-post-onlytext">
-            <section class="leftSide">
-            <button type="button" class="proPic"><img src="../img/basic-profile-img-.png" alt="프로필이미지"></button>
-            </section>
-            <section class="rightSide">
-            <div class="menuWrap">
-                <div class="proId">
-                <p>애월읍 위니브 감귤농장</p>
-                <p>@ weniv_Mandarin</p>
-                </div>
-                <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘"></button>
-            </div>
-            <div class="cntTxt">
-                <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
-            </div>
-            
-            <div class="btnWrap">
-                <div class="btnLike">
-                <button type="button"><img src="../img/icon-heart.png" alt="좋아요아이콘"></button>
-                <p>58</p>
-                </div>
-                <div class="btnCmt">
-                <button type="button"><img src="../img/icon-message-circle.png" alt="댓글아이콘"></button>
-                <p>12</p>
-                </div>
-            </div>
-            <p class="date">2020년 10월 21일</p>
-            </section>
-        </section>
+    <div class="homepostBox">    
     </div>
 
     <!-- tab-menu -->
@@ -130,6 +31,56 @@
         <div class="profile"><span></span><p>프로필</p></div>
     </section>
 
+    <script>
+        const cont = document.querySelector(".homepostBox");
+        const url = "http://146.56.183.55:5050/";
+        async function mylist() {
+            const res = await fetch(url+"post/sinhan/userpost", {
+                headers: {
+                    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+                    "Content-Type": "application/json"
+                }
+            })
+            resJson = await res.json();
+            for (const data of resJson.post) {
+                cont.innerHTML += 
+                `<section class="home-post">
+                    <section class="leftSide">
+                    <button type="button" class="proPic"><img src="../img/basic-profile-img-.png" alt="프로필이미지"></button>
+                    </section>
+                    <section class="rightSide">
+                    <div class="menuWrap">
+                        <div class="proId">
+                        <p>${data.author._id}</p>
+                        <p>@ ${data.author._id.split('@')[1]}</p>
+                        </div>
+                        <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘"></button>
+                    </div>
+                    <div class="cntTxt">
+                        <p>${data.content}</p>
+                    </div>
+                    <div class="cntImg">
+                        <img src="../img/${data.image}" alt="콘텐트이미지">
+                    </div>
+                    <div class="btnWrap">
+                        <div class="btnLike">
+                        <button type="button"><img src="../img/icon-heart.png" alt="좋아요아이콘"></button>
+                        <p>${data.heartCount}</p>
+                        </div>
+                        <div class="btnCmt">
+                        <button type="button"><img src="../img/icon-message-circle.png" alt="댓글아이콘"></button>
+                        <p>${data.commentCount}</p>
+                        </div>
+                    </div>
+                    <p class="date">${data.createdAt}</p>
+                    </section>
+                </section> `
+            }
+            console.log(resJson);
+            console.log("리스트");
+        }
+        mylist();
+    </script>
 </body>
 </html>
 
