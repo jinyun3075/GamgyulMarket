@@ -88,7 +88,7 @@ async function postcreate() {
     console.log("게시글만들기");
 }
 async function deletepost() {
-    const res = await fetch(url+"post/61d5825b6b8216fc5668773c", {
+    const res = await fetch(url+"post/61d597496b8216fc566878d0", {
         method: "delete",
         headers: {
             "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
