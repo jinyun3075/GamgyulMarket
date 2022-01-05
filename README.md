@@ -96,3 +96,5 @@
     - "follower": array,
     - "followerCount": Number,
     - "followingCount": Number 
+
+# 게시글
