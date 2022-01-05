@@ -103,7 +103,7 @@ async function deletepost() {
 // login();
 // list();
 // postcreate();
-mylist();
+// mylist();
 // deletepost();
 
 
