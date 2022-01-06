@@ -100,8 +100,10 @@
         const chattingButton = tabMenu.querySelector(".chatting");
         const createButton = tabMenu.querySelector(".create");
         const profileButton = tabMenu.querySelector(".profile");
-
-
+        const search = document.querySelector('.search');
+        search.addEventListener("click",()=>{
+                    location.href= "sjy_02_search-1.html";
+                })
         function handleProfileButton() {
             location.href = "../pagemarge_04_my_profile.html"
         }
