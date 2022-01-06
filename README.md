@@ -1,5 +1,10 @@
 # gamgyulmarket
+<<<<<<< HEAD
 멋사 감귤마켓 1팀의 repo!!
+=======
+멋사 감귤마켓 1팀의 repo!!eee
+
+>>>>>>> ecb9db4494abc9453ef2e2aa7a6389c2e3adb960
 # Sever
 
 # 유저
@@ -95,4 +100,9 @@
     - "follower": array,
     - "followerCount": Number,
     - "followingCount": Number 
+<<<<<<< HEAD
 <
+=======
+
+# 게시글
+>>>>>>> ecb9db4494abc9453ef2e2aa7a6389c2e3adb960
