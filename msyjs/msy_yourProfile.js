@@ -4,7 +4,7 @@ const profileHeader = document.querySelector(".profileHeader");
 const leftArrowButton = profileHeader.querySelector(".leftArrow");
 const moreIconButton = profileHeader.querySelector(".moreIcon");
 
-// followButton
+// follow, Message, share
 
 const profileMain = document.querySelector(".profileMain");
 const followButton = profileMain.querySelector("#followbtn");
@@ -24,24 +24,11 @@ function handleFollow() {
         mainProduct.style.display = "block";
     }
 }
+
 followButton.addEventListener('click', handleFollow);
 
 // tab-menu
 
-const tabMenu = document.querySelector(".tab-menu");
-const homeButton = tabMenu.querySelector(".home");
-const chattingButton = tabMenu.querySelector(".chatting");
-const createButton = tabMenu.querySelector(".create");
-const profileButton = tabMenu.querySelector(".profile");
-
-function handleProfileButton() {
-    location.href = "../pagemarge_04_my_profile.html"
-}
-
-profileButton.addEventListener("click", handleProfileButton);
-// chattingButton.addEventListener("click");
-// createButton.addEventListener("click");
-// profileButton.addEventListener("click");
 
 // top-main-nav
 
