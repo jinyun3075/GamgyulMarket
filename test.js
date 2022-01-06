@@ -99,13 +99,20 @@ async function deletepost() {
     console.log(resJson);
     console.log("게시글삭제");
 }
+async function alluser() {
+    const res = await fetch(url+"user", {
+
+    })
+    const resJson = await res.json();
+    console.log(resJson);
+}
 // sign();
 // login();
 // list();
 // postcreate();
 // mylist();
 // deletepost();
-
+// alluser();
 
 
 

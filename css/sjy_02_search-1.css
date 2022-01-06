@@ -12,9 +12,11 @@
 /* 나중에 삭제하기 */
 body {
   background-color: pink;
+  width: 390px;
+  height: 919px;
 } 
 
-/* --------------------------------------- 2-2(Search) ------------------------------------- */
+/* --------------------------------------- 2-3(Search-2) ------------------------------------- */
 
 /* top-search-nav : 계정 검색 */
 .top-search-nav{
@@ -25,46 +27,49 @@ body {
   background-color: white;
 }
 .top-search-nav .arrow{
-    cursor: pointer;
-    margin: 13px 16px;
-    background: url(../img/icon-arrow-left.png);
-    background-size: 22px;
-    width: 22px;
-    height: 22px;
+  cursor: pointer;
+  margin: 13px 16px;
+  background: url(../img/icon-arrow-left.png);
+  background-size: 22px;
+  width: 22px;
+  height: 22px;
 }
 .top-search-nav .search{
-    width: 316px;
-    height: 32px;
-    margin: 8px 18px 8px 10px;
-    border: none;
-    outline: none;
-    border-radius: 32px;
-    background-color: #f2f2f2;
-    text-indent: 16px;
-    font-weight: 400;
-    color: #c4c4c4;
+  width: 316px;
+  height: 32px;
+  margin: 8px 18px 8px 10px;
+  border: none;
+  outline: none;
+  border-radius: 32px;
+  background-color: #f2f2f2;
+  text-indent: 16px;
+  font-weight: 400;
+  color: #c4c4c4;
 }
 
 .top-search-nav .search:focus {
   color: #000
-  /* 추가함(2022.1.3.) */
+  /* focus 할 때뿐만 아니라 글씨가 입력된 상태라면 검은 글씨가 나오도록 하고 싶음 */
 }
 
 /* 검색 리스트 */
-.searchBefore {
-  width: 390px;
-  height: 712px;
+.searchAfter {
+  overflow: scroll;
+  width: 100%;
+  height: 90%;
   background-color: white;
   border-top: 0.5px solid #DBDBDB;
+}
+.searchAfter::-webkit-scrollbar {
+  display: none;
 }
 
 /* 홈, 채팅, 게시물 작성, 프로필 */
 .tab-menu {
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  top: 760px;
-  left: 0;
+  position: fixed;
+  bottom: 0;
   width: 390px;
   height: 60px;
   background-color: white;
@@ -93,7 +98,7 @@ body {
 }
 
 .tab-menu .home span{
-  background-image: url(../img/icon-home.png);
+  background-image: url(../img/icon-home-fill.png);
 }
 .tab-menu .chatting span{
   background-image: url(../img/icon-message-circle-1.png);
@@ -106,9 +111,7 @@ body {
 }
 
 /* 마우스 오버시 주황색 글씨가 되도록 구현 */
-.tab-menu .home span:hover {
-  background-image: url(../img/icon-home-fill.png);
-}
+
 .tab-menu .chatting span:hover {
   background-image: url(../img/icon-message-circle-fill.png);
 }
@@ -119,3 +122,52 @@ body {
 .tab-menu div span:hover ~ p {
   color: #F26E22;
 } 
+
+/* --------------------------------------- 2-2(Search) ------------------------------------- */
+
+
+/* 유저 검색 */
+.user-search {
+  position: relative;
+  width: 358px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 16px 16px 16px;
+}
+
+.user-search > img {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.searchName {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 5px;
+  left: 62px;
+  color: black;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.searchFirstName  {
+  color: #F26E22;
+}
+
+.searchEmail {
+  position: absolute;
+  top: 29px;
+  left: 62px;
+  color: #767676;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 12px;
+  line-height: 15px;
+}

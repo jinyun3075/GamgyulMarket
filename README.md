@@ -95,8 +95,4 @@
     - "follower": array,
     - "followerCount": Number,
     - "followingCount": Number 
-<<<<<<< HEAD
-
-# 게시글
-=======
->>>>>>> abd5e8de8532782d7967aa663724b6a80cc5946c
+<

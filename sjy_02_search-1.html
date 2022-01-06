@@ -20,7 +20,7 @@
     </section>
 
     <!-- 검색 리스트 -->
-    <div class="searchBefore"></div>
+    <div class="searchAfter"></div>
 
     <!-- tab-menu -->
     <section class="tab-menu">
@@ -30,7 +30,35 @@
         <div class="create"><span></span><p>게시물 작성</p></div>
         <div class="profile"><span></span><p>프로필</p></div>
     </section>
+    <script>
+        const url = "http://146.56.183.55:5050/"
+        const toptap = document.querySelector('.top-search-nav');
+        const search = toptap.querySelector('.search');
+        const list = document.querySelector('.searchAfter');
+        search.addEventListener("keydown",async (d)=> {
+            const res = await fetch(url+'user/searchuser/?keyword='+search.value,{
+                headers: {
+                    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+                    "Content-Type": "application/json"
+                }
+            });
+            const resJson = await res.json();
+            console.log(resJson);
+            list.innerHTML = "";
+            for (const data of resJson) {
+                
+                list.innerHTML += `<section class="user-search">
+                    <img src="${data.image}" alt="검색된 프로필" class="searchProfile">
+                    <div class="searchName">
+                        <h3 class="searchFirstName">${data.username}</h3>
+                        <h3 class="searchLastName">&nbsp;${data.accountname}</h3>
+                        </div>
+                        <p class="searchEmail">@ weniv_Mandarin</p>
+                        </section>`
+                }
 
+        })
+    </script>
 </body>
 </html>
 

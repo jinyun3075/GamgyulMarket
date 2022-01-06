@@ -42,6 +42,20 @@
                 }
             })
             resJson = await res.json();
+            // resJson = {}; // 없을때
+            if(!resJson.post){
+                cont.innerHTML =
+                `
+                <div class="m-container home">
+                <div class="img"></div>
+                <div class="text">유저를 검색해 팔로우 해보세요!</div>
+                <button class="M-button">검색하기</button>
+                </div>`
+                const mbtn = document.querySelector(".M-button");
+                mbtn.addEventListener("click",()=>{
+                    location.href= "sjy_02_search-1.html";
+                })
+            }else{
             for (const data of resJson.post) {
                 cont.innerHTML += 
                 `<section class="home-post">
@@ -51,8 +65,8 @@
                     <section class="rightSide">
                     <div class="menuWrap">
                         <div class="proId">
-                        <p>${data.author._id}</p>
-                        <p>@ ${data.author._id.split('@')[1]}</p>
+                        <p>${data.author.username}</p>
+                        <p>@ naver.com</p>
                         </div>
                         <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘"></button>
                     </div>
@@ -76,10 +90,23 @@
                     </section>
                 </section> `
             }
+        }
             console.log(resJson);
             console.log("리스트");
         }
         mylist();
+        const tabMenu = document.querySelector(".tab-menu");
+        const homeButton = tabMenu.querySelector(".home");
+        const chattingButton = tabMenu.querySelector(".chatting");
+        const createButton = tabMenu.querySelector(".create");
+        const profileButton = tabMenu.querySelector(".profile");
+
+
+        function handleProfileButton() {
+            location.href = "../pagemarge_04_my_profile.html"
+        }
+
+        profileButton.addEventListener("click", handleProfileButton);
     </script>
 </body>
 </html>
