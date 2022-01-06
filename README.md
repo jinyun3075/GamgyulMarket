@@ -1,6 +1,5 @@
 # gamgyulmarket
 멋사 감귤마켓 1팀의 repo!!
-
 # Sever
 
 # 유저
@@ -96,5 +95,8 @@
     - "follower": array,
     - "followerCount": Number,
     - "followingCount": Number 
+<<<<<<< HEAD
 
 # 게시글
+=======
+>>>>>>> abd5e8de8532782d7967aa663724b6a80cc5946c
