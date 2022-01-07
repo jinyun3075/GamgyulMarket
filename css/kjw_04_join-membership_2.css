@@ -47,11 +47,25 @@
   bottom: 0;
   right: 0;
 }
-
-/* 인풋 */
-.inp-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* input */
+.login-form input:nth-child(2){
+  margin-bottom: 0;
 }
-/* 버튼 */
+.login-form p:nth-child(4),
+.login-form p:nth-child(7){
+  margin-top: 16px;
+}
+/* error-message */
+.err-msg {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: red;
+  text-align: left;
+}
+/* hidden */
+.hidden{
+  display: none;
+}
