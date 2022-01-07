@@ -24,9 +24,8 @@ body {
 }
 
 .top-upload-nav .save {
-    cursor: pointer;
     margin: 8px 12px;
-    background-color: #ffc7a7;
+    background-color: #F26E22;
     width: 90px;
     height: 32px;
     border: none;
@@ -34,6 +33,9 @@ body {
     color: white;
     font-size: 14px;
     transition: all .3s;
+}
+.top-upload-nav .save:disabled {
+    background-color: #ffc7a7;
 }
 
 /* JS 구현 */
@@ -53,12 +55,14 @@ body {
     flex-direction: column;
 
 }
-
 .modificationProfile .imageBox {
     margin: 30px 0;
     width: 110px;
     height: 110px;
     position: relative;
+}
+#fi{
+    display: none;
 }
 .modificationProfile .imageBox .imgUpdate {
     position: absolute;
@@ -81,6 +85,7 @@ body {
     flex-direction: column;
 }
 .properties div {
+    position: relative;
     width: 322px;
     height: 48px;
     background-color: white;
@@ -103,4 +108,38 @@ body {
 }
 .properties div input::placeholder {
     color: #DBDBDB;
+}
+
+strong[class$="error"] {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    color: #EB5757;
+    font-size: 12px;
+    line-height: 14px;
+}
+.nameerror {
+    display: none;
+}
+.iderror {
+    display: none;
+}
+.userName:focus {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F26E22;
+}
+.userId:focus {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F26E22;
+}
+.userIntro:focus {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F26E22;
+}
+.userimg {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: url('../img/basic-profile-img-.png') no-repeat;
+    background-size: cover ;
 }

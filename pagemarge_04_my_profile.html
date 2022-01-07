@@ -126,6 +126,12 @@
     </section>
 
     <!-- 스크립트 연결 -->
-    <script src="js_jiyeong/sjy_02_my_profile.js"></script>
+    <script>
+        const proupdate = document.querySelector('.profileUpdate');
+        // 이동
+        proupdate.addEventListener('click',()=>{
+            location.href = "msy_profile_modification.html";
+        })
+    </script>
 </body>
 </html>

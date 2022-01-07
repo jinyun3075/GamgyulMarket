@@ -1,19 +1,41 @@
 @import url(your_profile.css);
 
 /* util */
+strong[class$="error"] {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    color: #EB5757;
+    font-size: 12px;
+    line-height: 14px;
+}
+.proerror {
+    display: none;
+}
+.priceerror {
+    display: none;
+}
+
 input {
     border: none;
-    padding: 10px 0 8px 0
+    padding: 10px 0 8px 0;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
 }
 input::placeholder {
     font-size: 14px;
     line-height: 15px;
 }
+input:focus {
+    border-bottom: 1px solid #F26E22;
+}
 .add_product { 
-    max-width: 390px;
-    max-height: 844px;
+    width: 390px;
     height: 844px;
-    border: aqua 1px solid;
+    /* border: aqua 1px solid; */
 }
 p {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
@@ -47,15 +69,17 @@ p {
 }
 
 .top-upload-nav .save {
-    cursor: pointer;
     margin: 8px 12px;
-    background-color: #ffc7a7;
+    background-color: #F26E22;
     width: 90px;
     height: 32px;
     border: none;
     border-radius: 32px;
     color: white;
     font-size: 14px;
+}
+.top-upload-nav .save:disabled{
+    background-color: #ffc7a7;
 }
 
 
@@ -67,15 +91,21 @@ p {
     line-height: 15px;
     padding: 30px 0 18px;
 }
+#img-b {
+    display: none;
+}
 .container .product-list .list-one .img-box {
-    min-width: 322px;
-    min-height: 204px;
+    display: block;
+    width: 322px;
+    height: 204px;
     background: #F2F2F2;
+    background-size: cover;
     border: 0.5px solid #DBDBDB;
     box-sizing: border-box;
     border-radius: 10px;
 }
 .container .product-list li {
+    position: relative;
     margin-top: 16px;
     border-bottom: 1px solid #DBDBDB;
 }
