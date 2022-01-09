@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="module/module.css">
+    <link rel="stylesheet" href="css/kjw_03_join-membership.css">
+    <title>join-membership (준우)</title>
+  </head>
+  <style>
+    @keyframes fadein {
+      0%{
+        opacity: 0;
+        visibility: hidden;
+      }
+      100%{
+        opacity: 1;
+        visibility:visible;
+      }
+    }
+    .fadein{
+      animation: fadein 0.7s;
+    }
+  </style>
+  <body>
+    <div id="login-email-join">
+      <div class="container">
+        <p class="tit-txt">이메일로 회원가입</p>
+          <form class="login-form">
+            <p>이메일</p>
+            <input required id="email" type="email" placeholder="이메일 주소를 입력해 주세요.">
+            <!-- error message -->
+            <p class="error-email">*이미 가입된 이메일 주소입니다.</p>
+            <p>비밀번호</p>
+            <input required id="pw" type="password" placeholder="비밀번호를 설정해 주세요.">
+            <!-- error message -->
+            <p class="error-pw">*비밀번호는 6자 이상이어야 합니다.</p>
+            <!-- <button class="L-button">다음</button> -->
+            <button class="btn L-Disabled-button">다음</button>
+          </form>        
+      </div>
+    </div>
+    <script src="js_(junwoo)/kjw_03_join-membership.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+#login-email-join {
+  margin: auto;
+  background-color: white;
+  height: 826px;
+  width: 390px;
+  padding: 30px 34px;
+}
+.container {
+  text-align: center;
+}
+/* 텍스트 */
+.container>p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+/* 인풋 */
+form.login-form{
+text-align: left;
+}
+.login-form p {
+  text-align: left;
+  color: #767676;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+.login-form input {
+  padding: 10px 0 8px;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid #DBDBDB;
+  font-size: 14px;
+  line-height: 14px;
+}
+.login-form p:nth-child(4){
+ margin-top: 16px;
+}
+.login-form input:hover,
+.login-form input:focus{
+  border-bottom: 1px solid #F26E22;
+}
+/* placeholder */
+input::-webkit-input-placeholder {
+  color: #DBDBDB;
+  font-size: 14px;
+  line-height: 14px;
+}
+/* error-message */
+.container .error-pw,
+.container .error-email,
+.container .error-msg {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: red;
+  text-align: left;
+}
+/* 버튼 */
+.btn {
+  margin: 30px 0 20px;
+}
+.btn:hover {
+  background: #F26E22;
+  transition: 1s;
+}
+
+/* 링크 */
+.container a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #767676;
+}
+
