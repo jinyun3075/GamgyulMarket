@@ -188,6 +188,11 @@ body {
   height: 60px;
   background: url(../img/img-button.png) center center no-repeat;
   background-size: 36px;
+  border: none;
+}
+
+.m-container.chatroom .comment .icon-file {
+  display: none;
 }
 
 .m-container.chatroom .comment .text {
@@ -208,6 +213,11 @@ body {
   width: 40px;
   height: 18px;
   color: #c4c4c4;
+}
+
+.m-container.chatroom .comment .posting.image {
+  color: #FFA200;
+  font-weight: bold;
 }
 
 .m-container.chatroom .modal {

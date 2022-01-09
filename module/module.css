@@ -435,7 +435,6 @@ button {
   margin: 12px 30px 0px;
   width: 24px;
   height: 24px;
-  background-image: url(../img/icon-home.png);
   background-size: 24px;
 }
 
@@ -447,20 +446,40 @@ button {
   color: #767676;
 }
 
+.tab-menu div:hover > p {
+  color: #F26E22;
+}
+
 .tab-menu .home span {
   background-image: url(../img/icon-home.png);
+}
+
+.tab-menu .home:hover > span {
+  background-image: url(../img/icon-home-fill.png);
 }
 
 .tab-menu .chatting span {
   background-image: url(../img/icon-message-circle-1.png);
 }
 
+.tab-menu .chatting:hover > span {
+  background-image: url(../img/icon-message-circle-fill.png);
+}
+
 .tab-menu .create span {
   background-image: url(../img/icon-edit.png);
 }
 
+.tab-menu .create:hover > span {
+  background-image: url(../img/icon-edit-fill.png);
+}
+
 .tab-menu .profile span {
   background-image: url(../img/icon-user.png);
+}
+
+.tab-menu .profile:hover > span {
+  background-image: url(../img/icon-user-fill.png);
 }
 
 .comment {
@@ -644,11 +663,11 @@ button {
 
 .loginInputId #inpId {
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 0;
   color: black;
-  /* font-size: 14px;
-  line-height: 14px; */
+  font-size: 14px;
+  line-height: 14px;
   border: none;
 }
 
@@ -738,6 +757,7 @@ button {
   border-radius: 32px;
   background-color: #FFC7A7;
   color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -749,6 +769,7 @@ button {
   border-radius: 26px;
   background-color: #F26E22;
   color: #fff;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 12px;
   font-weight: 400;
 }
@@ -760,6 +781,7 @@ button {
   border-radius: 26px;
   background-color: #fff;
   color: #767676;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
   font-size: 12px;
   line-height: 15px;
   -webkit-box-sizing: border-box;
