@@ -53,6 +53,7 @@
         const link = body.querySelector('.link');
         const savebtn = body.querySelector('.save');
         const file = body.querySelector('#img-b');
+        let img ="";
         let [check1,check2,check3] = [false,false,false];
 
         // 이름 유효성 검사
@@ -103,13 +104,16 @@
         // 이미지 업로드 및 보이기
         file.addEventListener('change',function(e){
             const f1=e.target.files[0];
+            console.log(f1)
             const reader = new FileReader();
             reader.readAsDataURL(f1);
             reader.onload = ()=>{
                 const img = body.querySelector('.img-box');
                 img.style = `background : url(${reader.result}) no-repeat center center;`;
-                // img=e.target.files[0].name;
             }
+            img=f1.name
+            console.log(img);
+
         })
     </script>
 </body>

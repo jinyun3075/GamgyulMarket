@@ -106,6 +106,52 @@ async function alluser() {
     const resJson = await res.json();
     console.log(resJson);
 }
+
+async function imgupload(i) {
+    let formData = new FormData()
+    const res = await fetch(url+"image/uploadfiles", {
+        method: "post",
+        headers: {
+            "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+            "Content-Type": "multipart/form-data"
+        },
+        body: i,
+    })
+    let name =[];
+    resJson = await res.json();
+    for(let i of resJson) {
+        name.push(i);
+    }
+    if(name.length > 1) {
+        console.log(name.join(","));
+    } else {
+        console.log(name[0]);
+    }
+    console.log(resJson);
+    console.log("이미지업로드");
+}
+async function imgview() {
+    const res = await fetch(url+"facebook.png", {
+    })
+    resJson = await res.json();
+    console.log(resJson);
+    console.log("이미지업로드");
+}
+
+
+const file = document.querySelector('input')
+file.addEventListener('change',function(e){
+    const formData = new FormData();
+    const f1=e.target.files[0];
+    console.log(f1)
+    formData.append('image',f1);
+    for (var pair of formData.entries()) {
+        console.log(pair[0]+ ', ' + pair[1]); 
+    }
+    imgupload(formData)
+})
+
+
 // sign();
 // login();
 // list();
