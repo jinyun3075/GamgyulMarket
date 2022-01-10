@@ -1,0 +1,32 @@
+#login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* splash */
+@keyframes fadeout{
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.m-container.splash.hidden{
+  animation: fadeout 2.5s;
+  animation-fill-mode: forwards;
+}
+.m-container.splash{
+  position: fixed;
+  z-index: 99;
+}
+.m-container.login{
+  position: absolute;
+}
+.m-container.splash,
+.m-container.login {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* width: 100%;
+  height: 100%; */
+}
+

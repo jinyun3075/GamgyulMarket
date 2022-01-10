@@ -131,7 +131,7 @@ body {
 .m-container.chat .tab-menu {
   position: absolute;
   bottom: 0px;
-  width: 100%;
+  width: 390px;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -140,7 +140,7 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   background-color: white;
-  border-top: solid 1px #dbdbdb;
+  border-top: 1px solid #dbdbdb;
 }
 
 .m-container.chat .tab-menu div {
@@ -174,23 +174,39 @@ body {
   color: #767676;
 }
 
+.m-container.chat .tab-menu div:hover > p {
+  color: #F26E22;
+}
+
 .m-container.chat .tab-menu .home span {
   background-image: url(../img/icon-home.png);
 }
 
-.m-container.chat .tab-menu .chatting span {
-  background-image: url(../img/icon-message-circle-fill.png);
+.m-container.chat .tab-menu .home:hover > span {
+  background-image: url(../img/icon-home-fill.png);
 }
 
-.m-container.chat .tab-menu .chatting p {
-  color: #f26e22;
+.m-container.chat .tab-menu .chatting span {
+  background-image: url(../img/icon-message-circle-1.png);
+}
+
+.m-container.chat .tab-menu .chatting:hover > span {
+  background-image: url(../img/icon-message-circle-fill.png);
 }
 
 .m-container.chat .tab-menu .create span {
   background-image: url(../img/icon-edit.png);
 }
 
+.m-container.chat .tab-menu .create:hover > span {
+  background-image: url(../img/icon-edit-fill.png);
+}
+
 .m-container.chat .tab-menu .profile span {
   background-image: url(../img/icon-user.png);
+}
+
+.m-container.chat .tab-menu .profile:hover > span {
+  background-image: url(../img/icon-user-fill.png);
 }
 /*# sourceMappingURL=kmh_05_Chat_List.css.map */

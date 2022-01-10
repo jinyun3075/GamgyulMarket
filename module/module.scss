@@ -382,7 +382,6 @@ button {
     span{
       margin: 12px 30px 0px;
       width: 24px; height: 24px;
-      background-image: url(../img/icon-home.png);
       background-size: 24px;
     }
     p{
@@ -392,11 +391,24 @@ button {
       font-weight: 400px;
       color: #767676;
     }
+    &:hover > p{color: #F26E22;}
   }
-  .home{span{background-image: url(../img/icon-home.png);}}
-  .chatting{span{background-image: url(../img/icon-message-circle-1.png);}}
-  .create{span{background-image: url(../img/icon-edit.png);}}
-  .profile{span{background-image: url(../img/icon-user.png);}}
+  .home{
+    span{background-image: url(../img/icon-home.png);}
+    &:hover > span{background-image: url(../img/icon-home-fill.png);}
+  }
+  .chatting{
+    span{background-image: url(../img/icon-message-circle-1.png);}
+    &:hover > span{background-image: url(../img/icon-message-circle-fill.png);}
+  }
+  .create{
+    span{background-image: url(../img/icon-edit.png);}
+    &:hover > span{background-image: url(../img/icon-edit-fill.png);}
+  }
+  .profile{
+    span{background-image: url(../img/icon-user.png);}
+    &:hover > span{background-image: url(../img/icon-user-fill.png);}
+  }
 }
 
 
