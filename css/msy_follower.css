@@ -1,0 +1,156 @@
+body {
+    background-color: #DBDBDB;
+}
+
+/* Header */
+
+.profileHeader {
+    width: 390px;
+    height: 48px;
+    border-bottom: 0.5px solid #DBDBDB;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    position: fixed;
+    top: 0;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 12px;
+}
+.profileHeader .leftArrow {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+.profileHeader p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* 홈, 채팅, 게시물 작성, 프로필 */
+
+.tab-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 390px;
+    height: 60px;
+    justify-content: space-evenly;
+    background-color: white;
+    border-top: 0.5px solid #DBDBDB;
+}
+.tab-menu div {
+    cursor: pointer;
+    width: 84px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tab-menu div span{
+    margin: 12px 30px 0px;
+    width: 24px; height: 24px;
+    background-image: url(../img/icon-home.png);
+    background-size: 24px;
+}
+.tab-menu div p{
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 400px;
+    color: #767676;
+}
+.tab-menu .home span{
+    background-image: url(../img/icon-home.png);
+}
+.tab-menu .chatting span{
+    background-image: url(../img/icon-message-circle-1.png);
+}
+.tab-menu .create span{
+    background-image: url(../img/icon-edit.png);
+}
+.tab-menu .profile span{
+    background-image: url(../img/icon-user.png);
+}
+
+/* 마우스 오버시 주황색 글씨가 되도록 구현 */
+.tab-menu .home span:hover {
+    background-image: url(../img/icon-home-fill.png);
+}
+.tab-menu .chatting span:hover {
+    background-image: url(../img/icon-message-circle-fill.png);
+}
+.tab-menu .profile span:hover {
+    background-image: url(../img/icon-user-fill.png);
+}
+/* 형제선택자 활용 */
+.tab-menu div span:hover ~ p {
+    color: #F26E22;
+} 
+
+/* --------------------------- */
+
+/* followList */
+
+.followList {
+    width: 390px;
+    height: 820px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 72px 16px 0px 16px;
+}
+.followList .followers {
+    width: 358px;
+    height: 50px;
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.followList .followers .followImage img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 0.5px solid #DBDBDB;
+}
+.followList .followers .userinfo {
+    display: flex;
+    flex-direction: column;
+    width: 228px;
+    cursor: pointer;
+}
+.userinfo .followName {
+    font-size: 14px;
+    font-weight: 500;
+}
+.userinfo .followIntro {
+    font-size: 12px;
+    font-weight: 400;
+    color: #767676;
+    margin-top: 6px;
+}
+.followList .followers .followButton {
+    width: 56px;
+    height: 28px;
+    border-radius: 26px;
+    font-size: 12px;
+    background-color: #F26E22;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+}
+.followList .followers .unfollowButton {
+    width: 56px;
+    height: 28px;
+    border-radius: 26px;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid #DBDBDB;
+    color: #767676;
+    cursor: pointer;
+}

@@ -1,25 +1,45 @@
 const url = "http://146.56.183.55:5050/"
+
+const userID = document.querySelector(".userID");
+const userName = document.querySelector(".userName");
+const userPW = document.querySelector(".userPW");
+
+const inputID = document.querySelector(".inputID");
+const inputPW = document.querySelector(".inputPW");
+
 async function sign(){
-        const res = await fetch(url+"user", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body : JSON.stringify({
-                "user":{
-                    "email": "jin@naver.com",
-                    "password": "123123",
-                    "username": "yunjae",
-                    "accountname": "sinhan",
-                    "intro": "하이"
-                }
-            })
+    const res = await fetch(url+"user", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body : JSON.stringify({
+            "user":{
+                // "email": "jin@naver.com",
+                // "password": "123123",
+                "email": inputID.value,
+                "password": inputPW.value,
+                "username": "1",
+                "accountname": "sinhan",
+                "intro": "1"
+            }
         })
-        resJson = await res.json();
-        console.log(resJson);
-        console.log("회원가입");
+    })
+    resJson = await res.json();
+    if(resJson.message.slice(0,2) === '이미'){
+        alert(resJson.message);
+        inputPW.value = '';
     }
-    
+    else if(resJson.message.slice(0,2) === '비밀'){
+        alert(resJson.message);
+    }
+    else {
+        alert(resJson.message);
+    }
+    console.log(resJson);
+    console.log("회원가입");
+}
+
 async function login(){
     // 쿠키값 : 0%7C48%2C0%7C49%2C0%7C50%2C0%7C1%2C6%7C52
     // accountname: "sinhan"
@@ -37,8 +57,8 @@ async function login(){
         },
         body : JSON.stringify({
             "user":{
-                "email": "jin@naver.com",
-                "password": "123123",
+                "email": inputID.value,
+                "password": inputPW.value,
             }
         })
     })
@@ -46,6 +66,7 @@ async function login(){
     console.log(resJson);
     console.log("로그인");
 }
+
 async function followlist() {
     const res = await fetch(url+"post/feed", {
         headers: {
@@ -105,7 +126,4 @@ async function deletepost() {
 // postcreate();
 // mylist();
 // deletepost();
-
-
-
 

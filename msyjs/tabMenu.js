@@ -13,8 +13,11 @@ function handleChattingButton() {
 function handleCreateButton() {
     location.href = "../jyj_upload.html"
 }
+function handleHomeButton() {
+    location.href = "../pagemarge_01_your_profile.html"
+}
 
 profileButton.addEventListener("click", handleProfileButton);
 chattingButton.addEventListener("click",handleChattingButton);
 createButton.addEventListener("click", handleCreateButton);
-homeButton.addEventListener("click");
+homeButton.addEventListener("click", handleHomeButton);
