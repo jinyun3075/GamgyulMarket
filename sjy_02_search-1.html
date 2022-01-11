@@ -38,7 +38,7 @@
         search.addEventListener("keydown",async (d)=> {
             const res = await fetch(url+'user/searchuser/?keyword='+search.value,{
                 headers: {
-                    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+                    "Authorization" : "Bearer "+localStorage.getItem("key"),
                     "Content-Type": "application/json"
                 }
             });
