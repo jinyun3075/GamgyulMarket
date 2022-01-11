@@ -3,6 +3,12 @@
 const profileMain = document.querySelector(".profileMain");
 const followButton = profileMain.querySelector("#followbtn");
 const mainProduct = document.querySelector(".mainProduct");
+const followers = profileMain.querySelector(".followers");
+
+function handleFollwers() {
+    location.href ="../msy_followers.html";
+}
+followers.addEventListener("click", handleFollwers);
 
 function handleFollow() {
     if (followButton.textContent === '팔로우'){

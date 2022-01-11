@@ -10,10 +10,6 @@ body {
 * {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.followers {
-    max-width: 390px;
-}
-
 
 /* 애월읍 노지 */
 .product{
@@ -96,6 +92,7 @@ body {
     font-weight: 400;
     color: #767676;
     text-align: center;
+    cursor: pointer;
 }
 .followers .followersNumber {
     font-size: 18px;
