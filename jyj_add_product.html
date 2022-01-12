@@ -55,6 +55,10 @@
         const file = body.querySelector('#img-b');
         let img;
         let [check1,check2,check3] = [false,false,false];
+        const back = body.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
 
         // 이름 유효성 검사
         product.onblur =(e)=>{

@@ -86,8 +86,8 @@ async function postcreate() {
         },
         body: JSON.stringify({
             post:{
-                content: "2번게시물",
-                image: "content2.png"
+                content: "6번게시물",
+                image: "pic5.png"
             }
         })
         

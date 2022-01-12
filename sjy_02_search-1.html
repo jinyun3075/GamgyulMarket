@@ -34,6 +34,14 @@
         const toptap = document.querySelector('.top-search-nav');
         const search = toptap.querySelector('.search');
         const list = document.querySelector('.searchAfter');
+        const $profile = document.querySelector('.profile');
+        const back = document.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
+        $profile.onclick = ()=> {
+            location.href = "pagemarge_04_my_profile.html";
+        }
         search.addEventListener("keydown",async (d)=> {
             const res = await fetch(localStorage.getItem("url")+'user/searchuser/?keyword='+search.value,{
                 headers: {

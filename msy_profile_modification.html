@@ -48,6 +48,10 @@
         const iderror = body.querySelector('.iderror');
         const savebtn = body.querySelector('.save');
         const file = body.querySelector('#fi');
+        const back = body.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
         let img;
         let [check1,check2,check3] = [false,false,false];
         // 이름 유효성 검사
