@@ -1,24 +1,28 @@
 const url = "http://146.56.183.55:5050/"
+
+// 회원가입
 async function sign(){
-        const res = await fetch(url+"user", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body : JSON.stringify({
-                "user":{
-                    "email": "jin@naver.com",
-                    "password": "123123",
-                    "username": "yunjae",
-                    "accountname": "sinhan",
-                    "intro": "하이"
-                }
-            })
+    const res = await fetch(url+"user", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body : JSON.stringify({
+            "user":{
+                "email": "jin@naver.com",
+                "password": "123123",
+                "username": "yunjae",
+                "accountname": "sinhan",
+                "intro": "하이"
+            }
         })
-        resJson = await res.json();
-        console.log(resJson);
-        console.log("회원가입");
-    }
+    })
+    resJson = await res.json();
+    console.log(resJson);
+    console.log("회원가입");
+}
+
+// 로그인
 async function login(){
     // 쿠키값 : 0%7C48%2C0%7C49%2C0%7C50%2C0%7C1%2C6%7C52
     // accountname: "sinhan"
@@ -44,8 +48,11 @@ async function login(){
     resJson = await res.json();
     console.log(resJson.user.token);
     localStorage.setItem("key",resJson.user.token);
+    localStorage.setItem("url","http://146.56.183.55:5050/");
+    localStorage.setItem("username",resJson.user.accountname);
     console.log("로그인");
 }
+// 팔로우리스트
 async function followlist() {
     const res = await fetch(url+"post/feed", {
         headers: {
@@ -55,8 +62,9 @@ async function followlist() {
     })
     resJson = await res.json();
     console.log(resJson);
-    console.log("리스트");
+    console.log("팔로우 리스트");
 }
+// 내 게시글 리스트
 async function mylist() {
     const res = await fetch(url+"post/sinhan/userpost", {
         headers: {
@@ -66,8 +74,9 @@ async function mylist() {
     })
     resJson = await res.json();
     console.log(resJson);
-    console.log("리스트");
+    console.log("내 게시글 리스트");
 }
+// 게시글 만들기
 async function postcreate() {
     const res = await fetch(url+"post", {
         method: "post",
@@ -87,6 +96,7 @@ async function postcreate() {
     console.log(resJson);
     console.log("게시글만들기");
 }
+// 게시글 삭제
 async function deletepost() {
     const res = await fetch(url+"post/61d597496b8216fc566878d0", {
         method: "delete",
@@ -99,6 +109,7 @@ async function deletepost() {
     console.log(resJson);
     console.log("게시글삭제");
 }
+// 모든유저(미완성)
 async function alluser() {
     const res = await fetch(url+"user", {
 
@@ -106,7 +117,15 @@ async function alluser() {
     const resJson = await res.json();
     console.log(resJson);
 }
-
+// 이미지 보기
+async function imgview() {
+    const res = await fetch(url+"a.jpg", {
+    })
+    resJson = await res.json();
+    console.log(resJson);
+    console.log("이미지 보기");
+}
+// 이미지 업로드
 async function imgupload(e) {
     let formData = new FormData()
     formData.append('image',e);
@@ -116,17 +135,8 @@ async function imgupload(e) {
     })
     resJson = await res.json();
     console.log(resJson);
-    console.log("이미지업로드");
+    console.log("이미지 업로드");
 }
-async function imgview() {
-    const res = await fetch(url+"facebook.png", {
-    })
-    resJson = await res.json();
-    console.log(resJson);
-    console.log("이미지업로드");
-}
-
-
 const file = document.querySelector('input')
 file.addEventListener('change',function(e){
     // const formData = new FormData();
@@ -139,6 +149,18 @@ file.addEventListener('change',function(e){
     imgupload(f1)
 })
 
+// 내 상품 리스트
+async function prolist(){
+    const res = await fetch(url+"product/sinhan",{
+        headers: {
+            "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+            "Content-Type": "application/json"
+        }
+    });
+    const resJson = await res.json()
+    console.log(resJson);
+    console.log("상품리스트");
+}
 
 // sign();
 // login();
@@ -147,7 +169,7 @@ file.addEventListener('change',function(e){
 // mylist();
 // deletepost();
 // alluser();
-
+// prolist();
 
 
 

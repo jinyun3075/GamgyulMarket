@@ -32,9 +32,8 @@
 
     <script>
         const cont = document.querySelector(".homepostBox");
-        const url = "http://146.56.183.55:5050/";
         async function mylist() {
-            const res = await fetch(url+"post/sinhan/userpost", {
+            const res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("username")+"/userpost", {
                 headers: {
                     "Authorization" : "Bearer "+localStorage.getItem("key"),
                     "Content-Type": "application/json"
@@ -124,7 +123,7 @@
 
         // 좋아요
         let heartCheck = async (id)=>{
-            await fetch(url+"post/"+id+"/heart",{
+            await fetch(localStorage.getItem("url")+"post/"+id+"/heart",{
                 method: "post",
                 headers: {
                     "Authorization" : "Bearer "+localStorage.getItem("key"),
@@ -138,7 +137,7 @@
         }
         // 좋아요 취소
         let unheartCheck = async (id)=>{
-            await fetch(url+"post/"+id+"/unheart",{
+            await fetch(localStorage.getItem("url")+"post/"+id+"/unheart",{
                 method: "delete",
                 headers: {
                     "Authorization" : "Bearer "+localStorage.getItem("key"),

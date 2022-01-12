@@ -97,11 +97,10 @@
             }
         }
         // api 통신
-        const url = "http://146.56.183.55:5050/";
         savebtn.onclick = async ()=>{
             const image= url+await imgApi(img);
             console.log(image)
-            const res = await fetch(url+"user", {
+            const res = await fetch(localStorage.getItem("url")+"user", {
                 method : "put",
                 headers: {
                     "Authorization" : "Bearer "+localStorage.getItem("key"),
@@ -136,7 +135,7 @@
         async function imgApi(img){
             const formdata = new FormData();
             formdata.append("image",img);
-            const res = await fetch(url+"image/uploadfile",{
+            const res = await fetch(localStorage.getItem("url")+"image/uploadfile",{
                 method :"post",
                 body : formdata
             }) 

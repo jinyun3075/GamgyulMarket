@@ -37,21 +37,6 @@
     </section>
     <section class="sellProduct">
         <p>판매 중인 상품</p>
-        <div class="product">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTFfMTc5%2FMDAxNjM2NjM3NjI3NzIy.PEQz1slgFTKup6pnuuivztHTr-mwgOWvteEl5H48Qnkg.IrtS87iK_ySXEJY2OlYDsbL5oUozzAJ-_sZlYa73eIAg.JPEG.666chunsa%2FIMG_8675.jpg&type=sc960_832" class="productImg" alt="프로덕트이미지">
-            <p class="productName">애월읍 노지 감귤</p>
-            <p class="productPrice">35,000원</p>
-        </div>
-        <div class="product">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTFfMTc5%2FMDAxNjM2NjM3NjI3NzIy.PEQz1slgFTKup6pnuuivztHTr-mwgOWvteEl5H48Qnkg.IrtS87iK_ySXEJY2OlYDsbL5oUozzAJ-_sZlYa73eIAg.JPEG.666chunsa%2FIMG_8675.jpg&type=sc960_832" class="productImg" alt="프로덕트이미지">
-            <p class="productName">애월읍 노지 감귤</p>
-            <p class="productPrice">35,000원</p>
-        </div>
-        <div class="product">
-            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTExMTFfMTc5%2FMDAxNjM2NjM3NjI3NzIy.PEQz1slgFTKup6pnuuivztHTr-mwgOWvteEl5H48Qnkg.IrtS87iK_ySXEJY2OlYDsbL5oUozzAJ-_sZlYa73eIAg.JPEG.666chunsa%2FIMG_8675.jpg&type=sc960_832" class="productImg" alt="프로덕트이미지">
-            <p class="productName">애월읍 노지 감귤</p>
-            <p class="productPrice">35,000원</p>
-        </div>
     </section>
 
     <!-- 지영 하단 모듈 -->
@@ -127,9 +112,31 @@
 
     <!-- 스크립트 연결 -->
     <script>
-        const proupdate = document.querySelector('.profileUpdate');
+        const $body = document.querySelector('body');
+        const $proupdate = $body.querySelector('.profileUpdate');
+        const $productlist = $body.querySelector('.sellProduct');
+
+        const productlist = async ()=> {
+            const res = await fetch(localStorage.getItem("url")+"product/"+localStorage.getItem("username"),{
+            headers: {
+                "Authorization" : "Bearer "+localStorage.getItem("key"),
+                "Content-Type": "application/json"
+            }
+        })
+        const resJson = await res.json()
+        for (const data of resJson.product) {    
+            $productlist.innerHTML +=`
+            <div class="product">
+                <img src="${data.itemImage}" class="productImg" alt="프로덕트이미지">
+                <p class="productName">${data.itemName}</p>
+                <p class="productPrice">${data.price}원</p>
+                </div>
+                `
+            }
+        }
+        productlist()
         // 이동
-        proupdate.addEventListener('click',()=>{
+        $proupdate.addEventListener('click',()=>{
             location.href = "msy_profile_modification.html";
         })
     </script>

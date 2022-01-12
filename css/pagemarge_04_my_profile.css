@@ -85,7 +85,18 @@ body {
     position: relative;
     white-space: nowrap;
     overflow-x: scroll;
+    overflow-y: hidden;
     padding: 16px 20px;
+}
+.sellProduct::-webkit-scrollbar {
+    height: 6px;
+}
+.sellProduct::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sellProduct::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #F26E22;
 }
 .sellProduct p {
     font-size: 16px;

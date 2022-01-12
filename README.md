@@ -24,3 +24,10 @@
     - 파일 업로드(이미지) - 성공
 - sjy_01 home-2.html
     - 좋아요 기능 추가
+
+## 22.01.12
+- url Storage로 변경
+- jyj_add_product.html
+    - 상품 등록 API 이미지 포함
+- pagemarge_04_my_profile.html
+    - 상품리스트
