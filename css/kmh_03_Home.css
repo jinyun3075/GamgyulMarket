@@ -33,10 +33,9 @@ body {
 }
 
 .m-container.home .top-main-nav .text {
-  font-family: 'Spoqa Han Sans Neo';
-  font-weight: 500;
   width: 115px;
   height: 22px;
+  font-weight: 500px;
   font-size: 18px;
   margin: 13px 16px;
   color: black;
@@ -127,30 +126,23 @@ body {
   color: #767676;
 }
 
-.m-container .tab-menu .home span{
-  background-image: url(../img/icon-home.png);
-}
-.m-container .tab-menu .chatting span{
-  background-image: url(../img/icon-message-circle-1.png);
-}
-.m-container .tab-menu .create span{
-  background-image: url(../img/icon-edit.png);
-}
-.m-container .tab-menu .profile span{
-  background-image: url(../img/icon-user.png);
-}
-
-/* 마우스 오버시 주황색 글씨가 되도록 구현 */
-.m-container .tab-menu .home span:hover {
+.m-container.home .tab-menu .home span {
   background-image: url(../img/icon-home-fill.png);
 }
-.m-container .tab-menu .chatting span:hover {
-  background-image: url(../img/icon-message-circle-fill.png);
+
+.m-container.home .tab-menu .home p {
+  color: #f26e22;
 }
-.m-container .tab-menu .profile span:hover {
-  background-image: url(../img/icon-user-fill.png);
+
+.m-container.home .tab-menu .chatting span {
+  background-image: url(../img/icon-message-circle-1.png);
 }
-/* 형제선택자 활용 */
-.m-container .tab-menu div span:hover ~ p {
-  color: #F26E22;
-} 
+
+.m-container.home .tab-menu .create span {
+  background-image: url(../img/icon-edit.png);
+}
+
+.m-container.home .tab-menu .profile span {
+  background-image: url(../img/icon-user.png);
+}
+/*# sourceMappingURL=kmh_03_Home.css.map */

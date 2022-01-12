@@ -237,7 +237,7 @@ body {
     background-size: 26px;
 }
 
-.m-container.album .pics {
+/* .m-container.album .pics {
     margin: 0px auto;
     display: grid;
         grid-template-areas: 'grid1 grid2 grid3'
@@ -253,60 +253,60 @@ body {
     padding: 21px 0px;
     width: 90%;
     height: 350px;
+} */
+.m-container.album .pics {
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:center;
+    padding: 21px 0px;
+    width: 90%;
+    height: 70%;
 }
-
 .m-container.album .pics .pic1 {
-    grid-row: 1;
-    grid-column: 1;
-    grid-area: grid1;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic1.png") center center no-repeat;
 }
 .m-container.album .pics .pic2 {
-    grid-row: 1;
-    grid-column: 2;
-    grid-area: grid2;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic2.png") center center no-repeat;
 }
 .m-container.album .pics .pic3 {
-    grid-row: 1;
-    grid-column: 3;
-    grid-area: grid3;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic3.png") center center no-repeat;
 }
 .m-container.album .pics .pic4 {
-    grid-row: 2;
-    grid-column: 1;
-    grid-area: grid4;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic4.png") center center no-repeat;
 }
 .m-container.album .pics .pic5 {
-    grid-row: 2;
-    grid-column: 2;
-    grid-area: grid5;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic5.png") center center no-repeat;
 }
 .m-container.album .pics .pic6 {
-    grid-row: 2;
-    grid-column: 3;
-    grid-area: grid6;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic6.png") center center no-repeat;
 }
 .m-container.album .pics .pic7 {
-    grid-row: 3;
-    grid-column: 1;
-    grid-area: grid7;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic7.png") center center no-repeat;
 }
 .m-container.album .pics .pic8 {
-    grid-row: 3;
-    grid-column: 2;
-    grid-area: grid8;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic8.png") center center no-repeat;
 }
 .m-container.album .pics .pic9 {
-    grid-row: 3;
-    grid-column: 3;
-    grid-area: grid9;
+    width: 7rem;
+    height: 7rem;
     background: url("../img/pic9.png") center center no-repeat;
 }
 
