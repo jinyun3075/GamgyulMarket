@@ -48,7 +48,11 @@
         const iderror = body.querySelector('.iderror');
         const savebtn = body.querySelector('.save');
         const file = body.querySelector('#fi');
-        let img="";
+        const back = body.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
+        let img;
         let [check1,check2,check3] = [false,false,false];
         // 이름 유효성 검사
         username.onblur =(e)=>{
@@ -98,11 +102,12 @@
         }
         // api 통신
         savebtn.onclick = async ()=>{
-            const url = "http://146.56.183.55:5050/";
-            const res = await fetch(url+"user", {
+            const image= url+await imgApi(img);
+            console.log(image)
+            const res = await fetch(localStorage.getItem("url")+"user", {
                 method : "put",
                 headers: {
-                    "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+                    "Authorization" : "Bearer "+localStorage.getItem("key"),
                     "Content-Type": "application/json"
                 },
                 body : JSON.stringify({
@@ -110,7 +115,7 @@
                         username: username.value,
                         accountname : userid.value,
                         intro : userintro.value,
-                        image : img
+                        image
                     }
                 })
             })
@@ -126,9 +131,21 @@
             reader.onload = ()=>{
                 const user = body.querySelector('.userimg');
                 user.style = `background : url(${reader.result}) no-repeat center center;`;
-                img=e.target.files[0].name;
             }
+            img=f1;
+            console.log(img);
         })
+
+        async function imgApi(img){
+            const formdata = new FormData();
+            formdata.append("image",img);
+            const res = await fetch(localStorage.getItem("url")+"image/uploadfile",{
+                method :"post",
+                body : formdata
+            }) 
+            const result = await res.json();
+            return result["filename"];
+        }
     </script>
 </body>
 </html>

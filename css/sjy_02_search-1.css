@@ -110,6 +110,12 @@ body {
   background-image: url(../img/icon-user.png);
 }
 
+.tab-menu .home p {
+  color: #F26E22;
+}
+.tab-menu .home {
+  cursor:default;
+}
 /* 마우스 오버시 주황색 글씨가 되도록 구현 */
 
 .tab-menu .chatting span:hover {

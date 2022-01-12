@@ -53,7 +53,12 @@
         const link = body.querySelector('.link');
         const savebtn = body.querySelector('.save');
         const file = body.querySelector('#img-b');
+        let img;
         let [check1,check2,check3] = [false,false,false];
+        const back = body.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
 
         // 이름 유효성 검사
         product.onblur =(e)=>{
@@ -108,9 +113,40 @@
             reader.onload = ()=>{
                 const img = body.querySelector('.img-box');
                 img.style = `background : url(${reader.result}) no-repeat center center;`;
-                // img=e.target.files[0].name;
             }
+            img=f1
         })
+        async function imgApi(img){
+            const formdata = new FormData();
+            formdata.append("image",img);
+            const res = await fetch(localStorage.getItem("url")+"image/uploadfile",{
+                method :"post",
+                body : formdata
+            }) 
+            const result = await res.json();
+            return result["filename"];
+        }
+        savebtn.onclick = async ()=>{
+            const image = localStorage.getItem("url")+await imgApi(img)
+            const res = await fetch(localStorage.getItem("url")+"product", {
+                method : "POST",
+                headers:{
+                    "Authorization" : "Bearer "+localStorage.getItem("key"),
+                    "Content-Type": "application/json"
+                },
+                body : JSON.stringify({
+                    product:{
+                        itemName: product.value,
+                        price : +price.value,
+                        link : link.value,
+                        itemImage : image
+                    }
+                })
+            })
+
+            const resJson = await res.json();
+            console.log(resJson);
+        }
     </script>
 </body>
 </html>
