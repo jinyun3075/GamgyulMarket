@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/jyj_post.css">
+</head>
+<body>
+  <article class="post">
+    <header class="top-basic-nav">
+      <h2 class="blind">상단기본네비게이션</h2>
+      <div class="arrow"></div>
+      <div class="more"></div>
+    </header>
+    <main>
+      <section class="container">
+        <section class="home-post">
+
+          <section class="leftSide">
+            <button type="button" class="proPic"><img src="img/basic-profile-img-.png" alt="프로필이미지"></button>
+          </section>
+
+          <section class="rightSide">
+            <div class="menuWrap">
+              <div class="proId">
+                <p>애월읍 위니브 감귤농장</p>
+                <p>@ weniv_Mandarin</p>
+              </div>
+              <button class="menuBtn" type="button">
+                <img src="img/more-icon.png" alt="더보기아이콘">
+              </button>
+            </div>
+            <div class="cntTxt">
+              <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
+            </div>  
+            <div class="cntImg">
+              <img src="../img/content.svg" alt="콘텐트이미지">
+            </div>
+            <div class="btnWrap">
+              <div class="btnLike">
+                <div class="button"></div>
+                <p>58</p>
+              </div>
+              <div class="btnCmt">
+                <button type="button">
+                  <img src="img/icon-message-circle.png" alt="댓글아이콘">
+                </button>
+                <p>12</p>
+              </div>
+            </div>
+            <p class="date">2020년 10월 21일</p>
+          </section>
+
+        </section>
+      </section>
+
+    </main>
+    <footer class="container off">
+      <section class="cont-info">
+        <img src="img/basic-profile2.png" alt="">
+        <article class="com-list">
+          <section class="list-com">
+            <p class="title">서귀포시 무슨 농장</p>
+            <p class="time">5분 전</p>
+            <div class="more"></div>
+          </section>
+          <p class="cont">게시글 답글~~!! 최고최고</p>
+          <div class="you">신고하기</div>
+          <div class="me">삭제</div>
+        </article>
+      </section>
+      <section class="cont-info">
+        <img src="img/basic-profile2.png" alt="">
+        <article class="com-list">
+          <section class="list-com">
+            <p class="title">감귤 러버</p>
+            <p class="time">5분 전</p>
+            <div class="more"></div>
+          </section>
+          <p class="cont">안녕하세요 사진이 너무 멋있어요 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 떙뻘떙뻘...</p>
+          <div class="you">신고하기</div>
+          <div class="me">삭제</div>
+        </article>
+      </section>
+      <section class="cont-info">
+        <img src="img/basic-profile2.png" alt="">
+        <article class="com-list">
+          <section class="list-com">
+            <p class="title">감귤 dddddd러버</p>
+            <p class="time">5분 전</p>
+            <div class="more"></div>
+          </section>
+          <p class="cont"> 수 있나요? 기다리기 지쳤어요 떙뻘떙뻘...</p>
+          <div class="you">신고하기</div>
+          <div class="me">삭제</div>
+        </article>
+      </section>
+    </footer>
+    <article class="comment off">
+      <h2 class="blind">코멘트</h2>
+      <div class="icon"></div>
+      <input class="text" placeholder="댓글 입력하기..."></input>
+      <div class="posting">게시</div>
+    </article>
+  </article>
+  <script>
+
+  // 1. 댓글 아이콘 클릭시 댓글창 나타남
+  let btnCmt = document.querySelector('.btnCmt');
+  btnCmt.addEventListener('click', function(){
+    document.querySelector('.comment').classList.toggle('off');
+    document.querySelector('footer.container').classList.toggle('off');
+  });
+
+  // 2. 하트 아이콘 클릭시 하트색깔 및 +1 됨
+  let toggle = 1;
+  let btnLike = document.querySelector('.btnLike');
+  btnLike.addEventListener('click', function(){
+    document.querySelector('.btnLike .button').classList.toggle('on');
+    let number = Number(document.querySelector('.btnLike p').innerText);
+    console.log(number);
+    document.querySelector('.btnLike p').innerText = number + toggle;
+    if (toggle == 1) {toggle = -1;} else {toggle = 1;}
+  });
+
+  // 3. 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
+  meandyou();
+  function meandyou() {    
+    let modal = document.querySelectorAll('footer.container .more');
+    let you = document.querySelectorAll('footer.container .you');
+    let me = document.querySelectorAll('footer.container .me');
+    for (let index = 0; index < modal.length; index++) {
+      modal[index].addEventListener('click', function(){
+        if(index < 2) {
+          you[index].classList.toggle('modal');
+        } else {
+          me[index].classList.toggle('modal');
+        }
+      });   
+    };
+  }
+
+  </script>
+</body>
+</html>
