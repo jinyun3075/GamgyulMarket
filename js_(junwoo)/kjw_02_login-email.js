@@ -8,11 +8,11 @@ function loginSub(event) {
   event.preventDefault();
   const valueEmail = inpEmail.value;
   const valuePw = inpPw.value;
-  if (valueEmail === 'paul-lab@naver.com' && valuePw === '0000') {
-    alert('login success');
-    location.href = 'kmh_03_Home.html';
-  } else {
-    errMsg.hidden = false;
-  }
+  // if (valueEmail === 'paul-lab@naver.com' && valuePw === '0000') {
+  //   alert('login success');
+  //   location.href = 'kmh_03_Home.html';
+  // } else {
+  //   errMsg.hidden = false;
+  // }
 }
 loginForm.addEventListener('submit', loginSub);

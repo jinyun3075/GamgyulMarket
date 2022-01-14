@@ -27,5 +27,34 @@
       </div>
     </div>
     <script src="js_(junwoo)/kjw_02_login-email.js"></script>
+    <script>
+      const body = document.querySelector("body");
+      const email = body.querySelector('#email');
+      const pw = body.querySelector('#pw');
+      const sign = body.querySelector('.btn');
+      sign.onclick = ()=> {
+        login();
+      }
+      async function login(){
+      const res = await fetch("http://146.56.183.55:5050/user/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body : JSON.stringify({
+            "user":{
+                "email": email.value,
+                "password": pw.value,
+            }
+        })
+      })
+    resJson = await res.json();
+    console.log(resJson);
+    localStorage.setItem("key",resJson.user.token);
+    localStorage.setItem("url","http://146.56.183.55:5050/");
+    localStorage.setItem("username",resJson.user.accountname);
+    console.log("로그인");
+}
+    </script>
   </body>
 </html>

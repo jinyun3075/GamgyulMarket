@@ -43,5 +43,37 @@
       </div>
     </div>
     <script src="js_(junwoo)/kjw_03_join-membership.js"></script>
+    <script>
+      const url = "http://146.56.183.55:5050/";
+      const body = document.querySelector("body");
+      const email = body.querySelector('#email');
+      const pw = body.querySelector('#pw');
+      const sign = body.querySelector('.btn');
+      sign.onclick = ()=> {
+        Sign();
+      }
+
+    // 회원가입
+    async function Sign(){
+      const res = await fetch(url+"user", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body : JSON.stringify({
+              "user":{
+                  "email": email.value,
+                  "password": pw.value,
+                  "username": "kjw",
+                  "accountname": "kjw",
+                  "intro": "intro!!"
+              }
+          })
+    })
+    resJson = await res.json();
+    console.log(resJson);
+    console.log("회원가입");
+}
+    </script>
   </body>
 </html>

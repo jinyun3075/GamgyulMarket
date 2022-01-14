@@ -102,7 +102,7 @@
         }
         // api 통신
         savebtn.onclick = async ()=>{
-            const image= url+await imgApi(img);
+            const image= localStorage.getItem("url")+await imgApi(img);
             console.log(image)
             const res = await fetch(localStorage.getItem("url")+"user", {
                 method : "put",
