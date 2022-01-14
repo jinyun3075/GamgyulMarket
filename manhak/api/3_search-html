@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/sjy_02_search-1.css">
+    <!-- <link rel="stylesheet" href="module.scss"> -->
+    <title>search-1</title>
+</head>
+<body>
+<!-- ------------------------------------- 2-2(search) ---------------------------------- -->
+
+    <!-- top-search-nav -->
+    <section class="top-search-nav">
+        <h2 class="blind">상단검색네비게이션</h2>
+        <div class="arrow"></div>
+        <input class="search" type="text" placeholder="계정 검색"></input>
+    </section>
+
+    <!-- 검색 리스트 -->
+    <div class="searchAfter"></div>
+
+    <!-- tab-menu -->
+    <section class="tab-menu">
+        <h2 class="blind">탭메뉴</h2>
+        <div class="home"><span></span><p>홈</p></div>
+        <div class="chatting"><span></span><p>채팅</p></div>
+        <div class="create"><span></span><p>게시물 작성</p></div>
+        <div class="profile"><span></span><p>프로필</p></div>
+    </section>
+    <script>
+        const toptap = document.querySelector('.top-search-nav');
+        const search = toptap.querySelector('.search');
+        const list = document.querySelector('.searchAfter');
+        const $profile = document.querySelector('.profile');
+        const back = document.querySelector('.arrow');
+        back.onclick= () => {
+            history.back();
+        }
+        $profile.onclick = ()=> {
+            location.href = "pagemarge_04_my_profile.html";
+        }
+        search.addEventListener("keydown",async (d)=> {
+            const res = await fetch(localStorage.getItem("url")+'user/searchuser/?keyword='+search.value,{
+                headers: {
+                    "Authorization" : "Bearer "+localStorage.getItem("key"),
+                    "Content-Type": "application/json"
+                }
+            });
+            const resJson = await res.json();
+            console.log(resJson);
+            list.innerHTML = "";
+            for (const data of resJson) {
+                list.innerHTML += `<section class="user-search">
+                    <img src="${data.image}" alt="검색된 프로필" class="searchProfile">
+                    <div class="searchName">
+                        <h3 class="searchFirstName">${data.username}</h3>
+                        <h3 class="searchLastName">&nbsp;${data.accountname}</h3>
+                        </div>
+                        <p class="searchEmail">@ weniv_Mandarin</p>
+                        </section>`
+                }
+
+        })
+    </script>
+</body>
+</html>
+
+
