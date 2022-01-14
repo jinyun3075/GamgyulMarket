@@ -1,5 +1,6 @@
 const url = "http://146.56.183.55:5050/"
 
+
 // 회원가입
 async function sign(){
     const res = await fetch(url+"user", {
@@ -9,11 +10,13 @@ async function sign(){
         },
         body : JSON.stringify({
             "user":{
+
                 "email": "jin@naver.com",
                 "password": "123123",
                 "username": "yunjae",
                 "accountname": "sinhan",
                 "intro": "하이"
+
             }
         })
     })
@@ -21,8 +24,6 @@ async function sign(){
     console.log(resJson);
     console.log("회원가입");
 }
-
-// 로그인
 async function login(){
     // 쿠키값 : 0%7C48%2C0%7C49%2C0%7C50%2C0%7C1%2C6%7C52
     // accountname: "sinhan"
@@ -40,8 +41,8 @@ async function login(){
         },
         body : JSON.stringify({
             "user":{
-                "email": "jin@naver.com",
-                "password": "123123",
+                "email": inputID.value,
+                "password": inputPW.value,
             }
         })
     })
@@ -52,7 +53,6 @@ async function login(){
     localStorage.setItem("username",resJson.user.accountname);
     console.log("로그인");
 }
-// 팔로우리스트
 async function followlist() {
     const res = await fetch(url+"post/feed", {
         headers: {
@@ -168,8 +168,4 @@ async function prolist(){
 // postcreate();
 // mylist();
 // deletepost();
-// alluser();
-// prolist();
-
-
 
