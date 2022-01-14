@@ -2,8 +2,10 @@ const loginForm = document.querySelector('.login-form');
 const inpEmail = loginForm.querySelector('input#email');
 const inpPw = loginForm.querySelector('input#pw');
 const errMsg = loginForm.querySelector('.error-msg');
+const btn = document.querySelector('.btn');
+const EMAIL = 'email'
 
-errMsg.hidden = true;
+errMsg.hidden = true; //default: hide error message
 function loginSub(event) {
   event.preventDefault();
   const valueEmail = inpEmail.value;
@@ -15,4 +17,5 @@ function loginSub(event) {
   //   errMsg.hidden = false;
   // }
 }
+
 loginForm.addEventListener('submit', loginSub);
