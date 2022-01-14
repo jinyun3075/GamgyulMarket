@@ -114,10 +114,12 @@
 
     // BACK-END PART : 서버에 이미지 올리고, 파일명 받아와서, 포스팅
 
+    const url = "http://146.56.183.55:5050/"
+
     async function imageUpload(files,index) {
         const formData = new FormData();
         formData.append("image", files[index]);//formData.append("키이름","값")
-        const res = await fetch(`http://146.56.183.55:5050/image/uploadfile`, {
+        const res = await fetch(url+'image/uploadfile', {
             method: "POST",
             body : formData
         })
@@ -127,9 +129,8 @@
         console.log(productImgName);
         return productImgName
     }
-    async function createPost(e) {
-        const url = "http://146.56.183.55:5050"
-        const token = localStorage.getItem("Token")
+    async function createPost(e) {        
+        const token = localStorage.getItem("key")
         //입력한 텍스트 불러와야함
         const contentText = text.value
         //여기는 나중에 이미지 주소가 추가될 예정
@@ -143,7 +144,7 @@
                 //완성된 url을 만들어서 넣어준다.
                 imageUrls.push(url+imgurl)
             }
-            const res = await fetch(url+"/post",{
+            const res = await fetch(url+"post",{
                 method:"POST",
                 headers:{
                             "Authorization" : `Bearer ${token}`,//토큰을 넣어줍니다. 
