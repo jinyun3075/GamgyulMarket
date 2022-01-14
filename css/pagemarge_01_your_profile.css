@@ -4,15 +4,12 @@
 /* 추후 삭제 */
 body {
     background-color: #DBDBDB;
+
 } 
 
 * {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
-.followers {
-    max-width: 390px;
-}
-
 
 /* 애월읍 노지 */
 .product{
@@ -42,55 +39,6 @@ body {
     margin-left: 2px;
 }
 
-
-/* 상품을 삭제할까요? */
-/* 
-.delete-alert{
-    width: 252px;
-    height: 110px;
-    border-radius: 10px;
-    border: none;
-    background-color: white;
-    overflow: hidden;
-    position: relative;
-}
-.delete-alert .deleteMessageBox{
-    width: 252px;
-    height: 64px;
-    border-bottom: 0.5px solid #DBDBDB;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.deleteMessageBox .deleteMessage{
-    font-size: 16px;
-    font-weight: 500;
-}
-.delete-alert a{
-    width: 50%;
-    height: 46px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 500;
-    border: 0.5px solid #DBDBDB;
-    box-sizing: border-box;
-}
-.delete-alert a:hover{
-    color: #F26E22;
-}
-.delete-alert .deleteCancelButton{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-.delete-alert .deleteButton{
-    position:absolute;
-    bottom: 0;
-    right: 0;
-} */
-
 /* your profile */
 
 .profileHeader {
@@ -100,6 +48,8 @@ body {
     box-sizing: border-box;
     background-color: white;
     display: flex;
+    position: fixed;
+    top: 0;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
@@ -119,7 +69,7 @@ body {
 
 .profileMain {
     width: 390px;
-    height: 314px;
+    height: 374px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -142,6 +92,7 @@ body {
     font-weight: 400;
     color: #767676;
     text-align: center;
+    cursor: pointer;
 }
 .followers .followersNumber {
     font-size: 18px;
@@ -377,7 +328,7 @@ section.rightSide .menuWrap {
 /* album */
 .m-container {
     background-color: white;
-    width: 100vw;
+    width: 390px;
     max-width: 390px;
     height: 884px;
     overflow: hidden;
@@ -588,4 +539,48 @@ button {
     padding: 14px 26px;
     font-size: 14px;
     cursor: pointer;
+}
+
+/* modal2 */
+
+.logoutModal {
+    width: 252px;
+    height: 110px;
+    background-color: white;
+    position: fixed;
+    left: 69px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: none;
+    z-index: 30;
+}
+.logoutModal p {
+    font-size: 18px;
+    margin: 22px 20px;
+}
+.logOutModal div {
+    position: relative;
+    height: 46px;
+}
+.logoutModal div button {
+    position: absolute;
+    display: inline-block;
+    border-top: 0.5px solid #DBDBDB;
+    font-size: 14px;
+    bottom: 0;
+    width: 126px;
+    height: 46px;
+}
+.logoutCancel { 
+    left: 0;
+    border-right: 0.5px solid #DBDBDB;
+}
+.logoutModal div button:hover {
+    color:#F26E22;
+    font-weight: 500;
 }
