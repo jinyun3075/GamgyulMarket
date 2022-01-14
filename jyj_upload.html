@@ -104,12 +104,12 @@
 
   // ⭐ BACK-END ⭐ : 서버에 이미지 올리고, 파일명 받아와서, 포스팅
 
-  const url = "http://146.56.183.55:5050"
+  const url = "http://146.56.183.55:5050/"
 
   async function imageUpload(files,index) {
     const formData = new FormData();
     formData.append("image", files[index]);
-    const res = await fetch(url+"/image/uploadfile", {
+    const res = await fetch(url+"image/uploadfile", {
       method: "POST",
       body : formData
     })
@@ -129,7 +129,7 @@
         const imgurl = await imageUpload(files,index)
         imageUrls.push(url+imgurl)
       }
-      const res = await fetch(url+"/post",{
+      const res = await fetch(url+"post",{
         method:"POST",
         headers:{
           "Authorization" : `Bearer ${token}`,
