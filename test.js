@@ -1,4 +1,4 @@
-const url = "http://146.56.183.55:5050/"
+const url = "http://146.56.183.55:5050/";
 
 
 // 회원가입
@@ -34,7 +34,7 @@ async function login(){
     // token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE"
     // username: "yunjae"
     // _id: "61d578946b8216fc566876fa"
-    const res = await fetch(url+"user/login", {
+    const res = await fetch("http://146.56.183.55:5050/user/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
