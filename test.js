@@ -1,5 +1,5 @@
 const url = "http://146.56.183.55:5050/"
-
+const testimg = document.querySelector(".testimg");
 
 // 회원가입
 async function sign(){
@@ -41,12 +41,13 @@ async function login(){
         },
         body : JSON.stringify({
             "user":{
-                "email": inputID.value,
-                "password": inputPW.value,
+                "email": "jin@naver.com",
+                "password": "123123",
             }
         })
     })
     resJson = await res.json();
+    console.log(resJson);
     console.log(resJson.user.token);
     localStorage.setItem("key",resJson.user.token);
     localStorage.setItem("url","http://146.56.183.55:5050/");
@@ -73,7 +74,7 @@ async function mylist() {
         }
     })
     resJson = await res.json();
-    console.log(resJson);
+    console.log(resJson.post[0]);
     console.log("내 게시글 리스트");
 }
 // 게시글 만들기
