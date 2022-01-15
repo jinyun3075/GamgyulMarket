@@ -1,3 +1,31 @@
+// 이미지 업로드
+const image_input = document.querySelector("#image_input");
+var uploaded_image;
+const img= "";
+image_input.addEventListener("change", function() {
+  const reader = new FileReader();
+  reader.addEventListener("load",() => {
+    uploaded_image = reader.result;
+    document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;    
+  });
+  reader.readAsDataURL(this.files[0]);
+  img = imgupload(this.files[0]);
+});
+
+async function imgupload(e) {
+  let formData = new FormData()
+  formData.append('image',e);
+  const res = await fetch(localStorage.getItem("url")+"image/uploadfile", {
+      method: "post",
+      body: formData
+  })
+  resJson = await res.json();
+  console.log(resJson);
+  console.log(resJson["filename"]);
+  console.log("이미지 업로드");
+  return await resJson["filename"];
+}
+
 const app = document.querySelector('.app');
 const errMsg = document.querySelectorAll('strong');
 const loginForm = document.querySelector('.login-form');
