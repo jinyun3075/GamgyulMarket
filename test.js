@@ -1,4 +1,3 @@
-
 const url = "http://146.56.183.55:5050/";
 
 // 회원가입
@@ -10,7 +9,6 @@ async function sign(){
         },
         body : JSON.stringify({
             "user":{
-
                 "email": "jin@naver.com",
                 "password": "123123",
                 "username": "yunjae",
@@ -41,8 +39,8 @@ async function login(){
         },
         body : JSON.stringify({
             "user":{
-                "email": "jin@naver.com",
-                "password": "123123",
+                "email": "namo4862@naver.com",
+                "password": "123456",
             }
         })
     })

@@ -83,7 +83,7 @@ async function mylist() {
                 </button>
             </div>
             <div class="cntTxt">
-                <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
+                <p>${resJson.post[index].author.intro}</p>
             </div>
             <div class="cntImg">
                 <img src="${resJson.post[index].image}" alt="콘텐트이미지">
@@ -126,7 +126,7 @@ async function userinfo() {
         </article>
         <article class="profileNameBox">
             <p class="marketName">${resJson.profile.username}</p>
-            <p class="marketEmail">@ weniv_Mandarin</p>
+            <p class="marketEmail">@ ${resJson.profile.accountname}</p>
             <p>${resJson.profile.intro}</p>
         </article>
         <article class="profileButtonBox">
@@ -147,13 +147,13 @@ async function userinfo() {
             followButton.textContent = '언팔로우';
             followButton.classList.remove("followButton");
             followButton.classList.add("unfollowButton");
-            mainProduct.style.display = "none";
+            // mainProduct.style.display = "none";
         }
         else {
             followButton.textContent = '팔로우';
             followButton.classList.remove("unfollowButton");
             followButton.classList.add("followButton");
-            mainProduct.style.display = "block";
+            // mainProduct.style.display = "block";
         }
     }
     
