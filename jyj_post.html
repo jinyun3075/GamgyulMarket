@@ -15,90 +15,15 @@
       <div class="arrow"></div>
       <div class="more"></div>
     </header>
+
     <main>
       <section class="container">
-        <section class="home-post">
-
-          <section class="leftSide">
-            <button type="button" class="proPic"><img src="img/basic-profile-img-.png" alt="프로필이미지"></button>
-          </section>
-
-          <section class="rightSide">
-            <div class="menuWrap">
-              <div class="proId">
-                <p>애월읍 위니브 감귤농장</p>
-                <p>@ weniv_Mandarin</p>
-              </div>
-              <button class="menuBtn" type="button">
-                <img src="img/more-icon.png" alt="더보기아이콘">
-              </button>
-            </div>
-            <div class="cntTxt">
-              <p>옷을 인생을 그러므로 없으면 것은 이상은 것은 우리의 위하여, 뿐이다. 이상의 청춘의 뼈 따뜻한 그들의 그와 약동하다. 대고, 못할 넣는 풍부하게 뛰노는 인생의 힘있다.</p>
-            </div>  
-            <div class="cntImg">
-              <img src="../img/content.svg" alt="콘텐트이미지">
-            </div>
-            <div class="btnWrap">
-              <div class="btnLike">
-                <div class="button"></div>
-                <p>58</p>
-              </div>
-              <div class="btnCmt">
-                <button type="button">
-                  <img src="img/icon-message-circle.png" alt="댓글아이콘">
-                </button>
-                <p>12</p>
-              </div>
-            </div>
-            <p class="date">2020년 10월 21일</p>
-          </section>
-
-        </section>
       </section>
-
     </main>
+
     <footer class="container off">
-      <section class="cont-info">
-        <img src="img/basic-profile2.png" alt="">
-        <article class="com-list">
-          <section class="list-com">
-            <p class="title">서귀포시 무슨 농장</p>
-            <p class="time">5분 전</p>
-            <div class="more"></div>
-          </section>
-          <p class="cont">게시글 답글~~!! 최고최고</p>
-          <div class="you">신고하기</div>
-          <div class="me">삭제</div>
-        </article>
-      </section>
-      <section class="cont-info">
-        <img src="img/basic-profile2.png" alt="">
-        <article class="com-list">
-          <section class="list-com">
-            <p class="title">감귤 러버</p>
-            <p class="time">5분 전</p>
-            <div class="more"></div>
-          </section>
-          <p class="cont">안녕하세요 사진이 너무 멋있어요 한라봉 언제 먹을 수 있나요? 기다리기 지쳤어요 떙뻘떙뻘...</p>
-          <div class="you">신고하기</div>
-          <div class="me">삭제</div>
-        </article>
-      </section>
-      <section class="cont-info">
-        <img src="img/basic-profile2.png" alt="">
-        <article class="com-list">
-          <section class="list-com">
-            <p class="title">감귤 dddddd러버</p>
-            <p class="time">5분 전</p>
-            <div class="more"></div>
-          </section>
-          <p class="cont"> 수 있나요? 기다리기 지쳤어요 떙뻘떙뻘...</p>
-          <div class="you">신고하기</div>
-          <div class="me">삭제</div>
-        </article>
-      </section>
     </footer>
+
     <article class="comment off">
       <h2 class="blind">코멘트</h2>
       <div class="icon"></div>
@@ -106,16 +31,88 @@
       <div class="posting">게시</div>
     </article>
   </article>
-  <script>
 
-  // 1. 댓글 아이콘 클릭시 댓글창 나타남
-  let btnCmt = document.querySelector('.btnCmt');
-  btnCmt.addEventListener('click', function(){
-    document.querySelector('.comment').classList.toggle('off');
-    document.querySelector('footer.container').classList.toggle('off');
-  });
+<script>
 
-  // 2. 하트 아이콘 클릭시 하트색깔 및 +1 됨
+document.querySelector(".comment .icon").style.background = `url(${localStorage.getItem("image")})`;
+
+// (날짜 refactoring) : 년월일 붙여주기 + 월, 일 앞에 0 붙어있으면 제거
+function date_refactoring(date) {
+  date = date + '';
+  let date1 = ''; 
+  let date2 = ''; 
+  // 🐋🐋🐋 date2엔 날짜가 오늘이면 몇시몇분인지 찍어주기, 60분 이내면 몇분 전, 1분 이내면 방금 전?
+  date1 = date.slice(0,4) + '년 ' 
+        + (date[5] === '0' ? date.slice(6,7) : date.slice(5,7)) + '월 '
+        + (date[8] === '0' ? date.slice(9,10) : date.slice(8,10)) + '일 ';
+  return date1;
+}
+
+
+// 🐋🐋🐋 나중에 해당 게시물의 id를 받아오도록 바꿔줘야 할 듯
+localStorage.setItem("post_id", "61e3b32b848431e191bca67e"); 
+
+
+// (5.4 게시글 상세)
+get_post();
+async function get_post() {
+  let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id"), {
+    method: "GET",
+    headers: {
+        "Authorization" : "Bearer "+localStorage.getItem("key"),
+        "Content-Type": "application/json"
+    }
+  })
+  response = await res.json();
+  
+  console.log("5.4게시글 상세 API - res.json()");
+  console.log(response);
+
+  let section_container = document.querySelector('Section.container');
+  let date1 = date_refactoring(response.post.updatedAt + '');
+  
+  // 하트개수 refactoring : 없으면 undefined 로 찍혀들어오는 것 방지
+  let heart = (response.post.heartcount ? response.post.heartcount : 0);
+
+  section_container.innerHTML = `
+    <section class="home-post">
+      <section class="leftSide">
+        <button type="button" class="proPic"><img src="${response.post.author.image}" alt="프로필이미지"></button>
+      </section>
+      <section class="rightSide">
+        <div class="menuWrap">
+          <div class="proId">
+            <p>${response.post.author.username}</p>
+            <p>@ ${response.post.author.accountname}</p>
+          </div>
+          <button class="menuBtn" type="button">
+            <img src="img/more-icon.png" alt="더보기아이콘">
+          </button>
+        </div>
+        <div class="cntTxt">
+          <p>${response.post.content}</p>
+        </div>  
+        <div class="cntImg">
+          <img src="${response.post.image}" alt="콘텐트이미지">
+        </div>
+        <div class="btnWrap">
+          <div class="btnLike">
+            <div class="button"></div>
+            <p>${heart}</p>
+          </div>
+          <div class="btnCmt">
+            <button type="button">
+              <img src="img/icon-message-circle.png" alt="댓글아이콘">
+            </button>
+            <p>${response.post.commentCount}</p>
+          </div>
+        </div>
+        <p class="date">${date1}</p>
+      </section>
+    </section>
+    `
+
+  // 하트 아이콘 클릭시 하트색깔 및 +1 됨
   let toggle = 1;
   let btnLike = document.querySelector('.btnLike');
   btnLike.addEventListener('click', function(){
@@ -125,8 +122,54 @@
     document.querySelector('.btnLike p').innerText = number + toggle;
     if (toggle == 1) {toggle = -1;} else {toggle = 1;}
   });
+}
 
-  // 3. 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
+
+// (7.2 comment 불러오기)
+comment_get();
+async function comment_get() {
+  let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments", {
+    method: "GET",
+    headers: {
+        "Authorization" : "Bearer " + localStorage.getItem("key"),
+        "Content-Type": "application/json"
+      }
+  })
+  response = await res.json();
+
+  console.log("7.2 댓글 리스트 API - res.json()");
+  console.log(response);
+
+  let commentbox = document.querySelector('footer.container');
+  let max = response.comments.length; 
+  commentbox.innerHTML = ""
+  for (let index = 0; index < max; index++) {
+    let date = date_refactoring(response.comments[max-index-1].createdAt)
+    commentbox.innerHTML += `
+      <section class="cont-info">
+        <img src="${response.comments[max-index-1].author.image}" alt="">
+        <article class="com-list">
+          <section class="list-com">
+            <p class="title">${response.comments[max-index-1].author.username}</p>
+            <p class="time">${date}</p>
+            <div class="more"></div>
+          </section>
+          <p class="cont">${response.comments[max-index-1].content}</p>
+          <div class="you">신고하기</div>
+          <div class="me">삭제</div>
+        </article>
+      </section>
+    `       
+  }
+
+  // 댓글 아이콘 클릭시 댓글창 나타남
+  let btnCmt = document.querySelector('.btnCmt');
+  btnCmt.addEventListener('click', function(){
+    document.querySelector('.comment').classList.toggle('off');
+    document.querySelector('footer.container').classList.toggle('off');
+  });
+
+  // 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
   meandyou();
   function meandyou() {    
     let modal = document.querySelectorAll('footer.container .more');
@@ -141,7 +184,50 @@
         }
       });   
     };
-  }
+  }    
+} 
+
+
+// (7.1 comment 작성)
+let comment_btn = document.querySelector(".posting"); 
+let comment_text = document.querySelector(".text");
+comment_btn.addEventListener('click', comment_post);
+comment_text.addEventListener('keyup', (event) => {
+  if(event.key === 'Enter'){comment_post()}
+});
+async function comment_post() {
+  let text = comment_text.value + "";
+  let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments", {
+    method: "POST",
+    headers: {
+        "Authorization" : "Bearer " + localStorage.getItem("key"),
+        "Content-Type": "application/json"
+      },
+    body: JSON.stringify({
+        "comment" : {
+          "content": text
+        }
+      })
+  })
+  response = await res.json();
+
+  console.log("7.1 댓글 작성 API - res.json()");
+  console.log(response);
+
+  comment_get();
+}
+
+
+// <article class="comment off">
+//   <h2 class="blind">코멘트</h2>
+//   <div class="icon"></div>
+//   <input class="text" placeholder="댓글 입력하기..."></input>
+//   <div class="posting">게시</div>
+// </article>
+
+
+
+
 
   </script>
 </body>
