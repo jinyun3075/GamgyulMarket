@@ -1,6 +1,20 @@
 * {
   box-sizing: border-box;
 }
+/* join-membership1 */
+@keyframes fadein {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  100%{
+    opacity: 1;
+    visibility:visible;
+  }
+}
+.fadein{
+  animation: fadein 0.7s;
+}
 #login-email-join {
   margin: auto;
   background-color: white;
@@ -29,6 +43,7 @@ text-align: left;
   font-size: 12px;
   line-height: 15px;
 }
+.login-form2 input,
 .login-form input {
   padding: 10px 0 8px;
   outline: none;
@@ -70,12 +85,88 @@ input::-webkit-input-placeholder {
   background: #F26E22;
   transition: 1s;
 }
-
 /* 링크 */
 .container a {
   font-size: 12px;
   font-weight: 400;
   line-height: 15px;
   color: #767676;
+}
+/* join-membership2 */
+#join-membership_2 {
+  margin: 10px auto;
+  background-color: white;
+  height: 826px;
+  width: 390px;
+  padding: 30px 34px;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 텍스트 */
+.cont .tit-txt {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+.cont .tit-txt + p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: #767676;
+}
+/* 프로필 */
+.profile{  
+  width: 110px;
+  height: 110px;
+  margin: 30px 0;
+  position: relative;
+}
+#display_image{
+  background-image: url(../img/basic-profile-img-.png);  
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;  
+  background-size: cover ;
+}
+.image-box{
+  background-image: url(../img/upload-file.png);
+  background-size: 36px;
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#image_input{
+  display: none;
+}
+/* input */
+.login-form2 input:nth-child(2){
+  margin-bottom: 0;
+}
+.login-form2 p:nth-child(4),
+.login-form2 p:nth-child(7){
+  margin-top: 16px;
+}
+/* error-message */
+.err-msg {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  color: red;
+  text-align: left;
+}
+/* hidden */
+.hidden{
+  display: none;
 }
 

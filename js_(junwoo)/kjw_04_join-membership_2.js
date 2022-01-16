@@ -38,8 +38,7 @@ function loginSub(event) {
   event.preventDefault();
   const nameValue = userName.value;
   const idValue = userId.value;
-  const spe = idValue.search(/[`~!@@#$%^/[\]/&*|₩₩₩'₩";:₩/?]/); //특수문자
-  ///모든값이 string으로 변환되는데 구분필요?
+  const spe = idValue.search(/[`~!@@#$%^/[\]/&*|₩₩₩'₩";:₩/?]/);
   console.log(spe);
   if (nameValue.length < 2 || nameValue.length > 10) {
     errMsg['0'].classList.remove('hidden');
