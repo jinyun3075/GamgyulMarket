@@ -40,7 +40,7 @@ albumList.addEventListener("click", handleAlbum);
 // async await
 
 async function prolist(){
-    const res = await fetch(url+"product/sinhan",{
+    const res = await fetch(url+`product/${localStorage.username}`,{
         headers: {
             "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
             "Content-Type": "application/json"
@@ -57,14 +57,14 @@ async function prolist(){
     }
 }
 async function mylist() {
-    const res = await fetch(url+"post/sinhan/userpost", {
+    const res = await fetch(url+`post/${localStorage.username}/userpost`, {
         headers: {
             "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
             "Content-Type": "application/json"
         }
     })
     resJson = await res.json();
-    console.log(resJson);
+    console.log(resJson)
     for (let index = 0; index < resJson.post.length; index++){
         homePostSection.innerHTML += `<section class="home-post">
         <section class="leftSide">
@@ -83,7 +83,7 @@ async function mylist() {
                 </button>
             </div>
             <div class="cntTxt">
-                <p>${resJson.post[index].author.intro}</p>
+                <p>${resJson.post[index].content}</p>
             </div>
             <div class="cntImg">
                 <img src="${resJson.post[index].image}" alt="콘텐트이미지">
@@ -147,21 +147,34 @@ async function userinfo() {
             followButton.textContent = '언팔로우';
             followButton.classList.remove("followButton");
             followButton.classList.add("unfollowButton");
-            // mainProduct.style.display = "none";
         }
         else {
             followButton.textContent = '팔로우';
             followButton.classList.remove("unfollowButton");
             followButton.classList.add("followButton");
-            // mainProduct.style.display = "block";
         }
     }
     
     followButton.addEventListener('click', handleFollow);
 }
+async function album() {
+    const res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("username")+"/userpost", {
+        headers: {
+            "Authorization" : "Bearer "+localStorage.getItem("key"),
+            "Content-Type": "application/json"
+        }
+    })
+    resJson = await res.json();
+    let pics = albumPost.querySelector('.pics');
+    for (const data of resJson.post) {
+        let div = document.createElement("div");
+        div.className = "pic";
+        div.style.backgroundImage = `url("./img/${data.image}")`
+        pics.appendChild(div);
+    }
+    
+}
 userinfo();
 prolist();
 mylist();
-
-// resJson.post[0].author.followerCount
-// resJson.post[0].author.followingCount
+album();

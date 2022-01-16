@@ -307,6 +307,7 @@ section.leftSide button.proPic img {
     height: 42px;
 }
 .home-post .rightSide {
+    width: 278px;
     margin-bottom: 60px;
 }
 section.rightSide .menuWrap {
@@ -336,112 +337,33 @@ section.rightSide .menuWrap {
 
 /* album */
 .m-container {
+    display: none;
     background-color: white;
-    width: 390px;
+    width: 100vw;
     max-width: 390px;
-    height: 884px;
+    height: 29em;
     overflow: hidden;
 }
 
 .m-container.album {
-    display: none;
     position: relative;
-    height: 534px;
+    height: 508px;
 }
 
 .m-container.album .pics {
     margin: 0px auto;
-    display: -ms-grid;
-    display: grid;
-        grid-template-areas: 'grid1 grid2 grid3'
-'grid4 grid5 grid6'
-'grid7 grid8 grid9';
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    row-gap: 8px;
-    -webkit-column-gap: 8px;
-            column-gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:center;
     padding: 21px 0px;
     width: 90%;
-    height: 350px;
+    height: 70%;
 }
-
-.m-container.album .pics div {
-    border: 1px solid black;
-}
-
-.m-container.album .pics .pic1 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: grid1;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic2 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: grid2;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic3 {
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-    grid-area: grid3;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic4 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: grid4;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic5 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: grid5;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic6 {
-    -ms-grid-row: 2;
-    -ms-grid-column: 3;
-    grid-area: grid6;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic7 {
-    -ms-grid-row: 3;
-    -ms-grid-column: 1;
-    grid-area: grid7;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic8 {
-    -ms-grid-row: 3;
-    -ms-grid-column: 2;
-    grid-area: grid8;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
-}
-
-.m-container.album .pics .pic9 {
-    -ms-grid-row: 3;
-    -ms-grid-column: 3;
-    grid-area: grid9;
-    background: url("../img/Group.png") center center no-repeat;
-    background-size: 80px;
+.m-container.album .pics .pic {
+    width: 7rem;
+    height: 7rem;
+    background: center center no-repeat;
 }
 
 /* content */
@@ -595,44 +517,3 @@ button {
     color:#F26E22;
     font-weight: 500;
 }
-
-/* Home-post-modal */
-
-/* .Home-post-modal {
-    display: none;
-    position: fixed;
-    width: 390px;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    top: 0;
-}
-.Home-post-modal .homeModalBox {
-    width: 390px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: absolute;
-    background-color: white;
-    bottom: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-bottom: 10px;
-}
-.homeModalBox .topBar {
-    width: 50px;
-    height: 4px;
-    margin: 16px 0;
-    border: none;
-    border-radius: 5px;
-    background-color: #DBDBDB;
-    cursor: pointer;
-}
-.homeModalBox .infoBox, .homeModalBox .logoutBox {
-    width: 390px;
-    height: 46px;
-    box-sizing: border-box;
-    padding: 14px 26px;
-    font-size: 14px;
-    cursor: pointer;
-} */
