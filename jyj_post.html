@@ -32,6 +32,14 @@
     </article>
   </article>
 
+  <section class="icon-post-modal">
+    <div class="modalBox">
+        <div class="topBar"></div>
+        <div class="deleteBox">삭제</div>
+        <div class="modifyBox">수정</div>
+    </div>
+  </section>
+
 <script>
 
 document.querySelector(".comment .icon").style.background = `url(${localStorage.getItem("image")})`;
@@ -73,7 +81,7 @@ async function get_post() {
   
   // 하트개수 refactoring : 없으면 undefined 로 찍혀들어오는 것 방지
   let heart = (response.post.heartcount ? response.post.heartcount : 0);
-
+  section_container.innerHTML = "";
   section_container.innerHTML = `
     <section class="home-post">
       <section class="leftSide">
@@ -125,9 +133,9 @@ async function get_post() {
 }
 
 
-// (7.2 comment 불러오기)
-comment_get();
-async function comment_get() {
+// (7.2 댓글 리스트)
+get_comment();
+async function get_comment() {
   let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments", {
     method: "GET",
     headers: {
@@ -152,7 +160,7 @@ async function comment_get() {
           <section class="list-com">
             <p class="title">${response.comments[max-index-1].author.username}</p>
             <p class="time">${date}</p>
-            <div class="more"></div>
+            <div class="more" data-id="${response.comments[max-index-1].id}"></div>
           </section>
           <p class="cont">${response.comments[max-index-1].content}</p>
           <div class="you">신고하기</div>
@@ -169,33 +177,65 @@ async function comment_get() {
     document.querySelector('footer.container').classList.toggle('off');
   });
 
-  // 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
-  meandyou();
-  function meandyou() {    
-    let modal = document.querySelectorAll('footer.container .more');
-    let you = document.querySelectorAll('footer.container .you');
-    let me = document.querySelectorAll('footer.container .me');
-    for (let index = 0; index < modal.length; index++) {
-      modal[index].addEventListener('click', function(){
-        if(index < 2) {
-          you[index].classList.toggle('modal');
-        } else {
-          me[index].classList.toggle('modal');
-        }
-      });   
-    };
-  }    
+  // // 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
+  // meandyou();
+  // function meandyou() {    
+  //   let modal = document.querySelectorAll('footer.container .more');
+  //   let you = document.querySelectorAll('footer.container .you');
+  //   let me = document.querySelectorAll('footer.container .me');
+  //   for (let index = 0; index < modal.length; index++) {
+  //     modal[index].addEventListener('click', function(){
+  //       if(index < 2) {
+  //         you[index].classList.toggle('modal');
+  //       } else {
+  //         me[index].classList.toggle('modal');
+  //       }
+  //     });   
+  //   };
+  // }
+  
+
+  // (7.3 댓글 삭제)
+  let comments = document.querySelectorAll('.list-com .more');
+  let modal = document.querySelector('.icon-post-modal'); 
+  let exit = modal.querySelector('.topBar');
+  let deletebtn = modal.querySelector('.deleteBox');
+  for (let index = 0; index < comments.length; index++) {
+    let comment_id = comments[index].dataset.id;
+    console.log(comment_id);
+    comments[index].addEventListener('click', (event) => {
+      modal.style.display = "block";
+      deletebtn.addEventListener('click', async () => {
+        let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments/"+comment_id, {
+          method: "DELETE",
+          headers: {
+              "Authorization" : "Bearer " + localStorage.getItem("key"),
+              "Content-Type": "application/json"
+            }
+        })
+        response = await res.json();
+        console.log("7.3 댓글 삭제 API - res.json()");
+        console.log(response);
+        modal.style.display = "none";
+        get_post();
+        get_comment();
+      })
+    })
+  }
+  exit.addEventListener('click', () => {
+    modal.style.display = "none";
+  })
 } 
 
 
-// (7.1 comment 작성)
+// (7.1 댓글 작성)
 let comment_btn = document.querySelector(".posting"); 
 let comment_text = document.querySelector(".text");
-comment_btn.addEventListener('click', comment_post);
+comment_btn.addEventListener('click', post_comment);
 comment_text.addEventListener('keyup', (event) => {
-  if(event.key === 'Enter'){comment_post()}
+  if(event.key === 'Enter'){post_comment()}
 });
-async function comment_post() {
+async function post_comment() {
   let text = comment_text.value + "";
   let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments", {
     method: "POST",
@@ -214,19 +254,10 @@ async function comment_post() {
   console.log("7.1 댓글 작성 API - res.json()");
   console.log(response);
 
-  comment_get();
+  get_post();
+  get_comment();
+  comment_text.value = "";
 }
-
-
-// <article class="comment off">
-//   <h2 class="blind">코멘트</h2>
-//   <div class="icon"></div>
-//   <input class="text" placeholder="댓글 입력하기..."></input>
-//   <div class="posting">게시</div>
-// </article>
-
-
-
 
 
   </script>
