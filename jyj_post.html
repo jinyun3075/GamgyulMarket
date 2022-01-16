@@ -43,6 +43,7 @@
 <script>
 
 document.querySelector(".comment .icon").style.background = `url(${localStorage.getItem("image")})`;
+document.querySelector(".comment .icon").style.backgroundSize = "36px";
 
 // (날짜 refactoring) : 년월일 붙여주기 + 월, 일 앞에 0 붙어있으면 제거
 function date_refactoring(date) {
@@ -58,7 +59,7 @@ function date_refactoring(date) {
 
 
 // 🐋🐋🐋 나중에 해당 게시물의 id를 받아오도록 바꿔줘야 할 듯
-localStorage.setItem("post_id", "61e3b32b848431e191bca67e"); 
+localStorage.setItem("post_id", "61e43e37848431e191bdc29b"); 
 
 
 // (5.4 게시글 상세)
@@ -79,8 +80,9 @@ async function get_post() {
   let section_container = document.querySelector('Section.container');
   let date1 = date_refactoring(response.post.updatedAt + '');
   
-  // 하트개수 refactoring : 없으면 undefined 로 찍혀들어오는 것 방지
+  // (하트개수 refactoring) : 없으면 undefined 로 찍혀들어오는 것 방지
   let heart = (response.post.heartcount ? response.post.heartcount : 0);
+
   section_container.innerHTML = "";
   section_container.innerHTML = `
     <section class="home-post">
@@ -120,7 +122,7 @@ async function get_post() {
     </section>
     `
 
-  // 하트 아이콘 클릭시 하트색깔 및 +1 됨
+  // 🐋🐋🐋  하트 아이콘 클릭시 하트색깔 및 +1 됨 -> 추가작업필
   let toggle = 1;
   let btnLike = document.querySelector('.btnLike');
   btnLike.addEventListener('click', function(){
@@ -160,11 +162,11 @@ async function get_comment() {
           <section class="list-com">
             <p class="title">${response.comments[max-index-1].author.username}</p>
             <p class="time">${date}</p>
-            <div class="more" data-id="${response.comments[max-index-1].id}"></div>
+            <div class="more" 
+              data-id="${response.comments[max-index-1].id}" 
+              data-author="${response.comments[max-index-1].author._id}"></div>
           </section>
           <p class="cont">${response.comments[max-index-1].content}</p>
-          <div class="you">신고하기</div>
-          <div class="me">삭제</div>
         </article>
       </section>
     `       
@@ -177,49 +179,61 @@ async function get_comment() {
     document.querySelector('footer.container').classList.toggle('off');
   });
 
-  // // 댓글의 more 버튼 클릭시 신고하기 또는 삭제 모달창 나타남 
-  // meandyou();
-  // function meandyou() {    
-  //   let modal = document.querySelectorAll('footer.container .more');
-  //   let you = document.querySelectorAll('footer.container .you');
-  //   let me = document.querySelectorAll('footer.container .me');
-  //   for (let index = 0; index < modal.length; index++) {
-  //     modal[index].addEventListener('click', function(){
-  //       if(index < 2) {
-  //         you[index].classList.toggle('modal');
-  //       } else {
-  //         me[index].classList.toggle('modal');
-  //       }
-  //     });   
-  //   };
-  // }
-  
-
-  // (7.3 댓글 삭제)
   let comments = document.querySelectorAll('.list-com .more');
   let modal = document.querySelector('.icon-post-modal'); 
   let exit = modal.querySelector('.topBar');
   let deletebtn = modal.querySelector('.deleteBox');
+  let reportbtn = modal.querySelector('.modifyBox');
   for (let index = 0; index < comments.length; index++) {
     let comment_id = comments[index].dataset.id;
-    console.log(comment_id);
+    let comment_author = comments[index].dataset.author;
     comments[index].addEventListener('click', (event) => {
-      modal.style.display = "block";
-      deletebtn.addEventListener('click', async () => {
-        let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments/"+comment_id, {
-          method: "DELETE",
-          headers: {
-              "Authorization" : "Bearer " + localStorage.getItem("key"),
-              "Content-Type": "application/json"
-            }
+      
+      // (7.3 댓글 삭제)  
+      if(localStorage.getItem("id")==comment_author) {
+        console.log("7.3 댓글 삭제 API")
+        modal.style.display = "block";
+        deletebtn.style.display = "block";
+        reportbtn.innerText = "수정";
+        deletebtn.addEventListener('click', async () => {
+          let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments/"+comment_id, {
+            method: "DELETE",
+            headers: {
+                "Authorization" : "Bearer " + localStorage.getItem("key"),
+                "Content-Type": "application/json"
+              }
+          })
+          response = await res.json();
+          console.log("7.3 댓글 삭제 API - res.json()");
+          console.log(response);
+          modal.style.display = "none";
+          get_post();
+          get_comment();
         })
-        response = await res.json();
-        console.log("7.3 댓글 삭제 API - res.json()");
-        console.log(response);
-        modal.style.display = "none";
-        get_post();
-        get_comment();
-      })
+      }
+      
+      // (7.4 댓글 신고)  
+      if(localStorage.getItem("id")!=comment_author) {
+        console.log("7.4 댓글 신고 API")
+        modal.style.display = "block";
+        deletebtn.style.display = "none";
+        reportbtn.style.display = "block";
+        reportbtn.innerText = "신고하기";
+        reportbtn.addEventListener('click', async () => {
+          let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments/"+comment_id+"/report", {
+            method: "GET",
+            headers: {
+                "Authorization" : "Bearer " + localStorage.getItem("key"),
+                "Content-Type": "application/json"
+              }
+          })
+          response = await res.json();
+          console.log("7.4 댓글 신고 API - res.json()");
+          console.log(response);
+          modal.style.display = "none";
+        })
+      }
+      
     })
   }
   exit.addEventListener('click', () => {
