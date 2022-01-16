@@ -36,6 +36,11 @@
 
   // (FRONT-END) 이미지 불러와서 브라우저에 미리보기 제공
 
+  text.addEventListener('keyup', () => {
+    if(text.value != "") {submitBtn.style.backgroundColor = '#F26E22';}
+    if(text.value == "") {submitBtn.style.backgroundColor = '#ffc7a7';}
+  })
+
   img.addEventListener('click', function (event) { 
     imgfile.click();
   });
@@ -100,6 +105,7 @@
       `;
       comment.appendChild(myimage);
     }
+    submitBtn.style.backgroundColor = '#F26E22';
   };
 
   // (BACK-END) 서버에 이미지 올리고, 파일명 받아와서, 포스팅
