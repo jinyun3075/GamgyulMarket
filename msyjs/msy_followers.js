@@ -34,7 +34,7 @@ function handleFollowButton() {
 handleFollowButton();
 
 async function followerlist() {
-    const res = await fetch(url+"profile/hungry_uni/follower", {
+    const res = await fetch(url+`profile/${localStorage.username}/follower`, {
         method: "get",
         headers: {
             "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTQ0N2ExODQ4NDMxZTE5MWJkZDUwOSIsImV4cCI6MTY0NzUzNDk5MiwiaWF0IjoxNjQyMzUwOTkyfQ.kkMRFrKsLQ22VeqEBBm1tzwEyuMA4lVor_s3DnqnESk",
