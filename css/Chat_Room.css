@@ -220,7 +220,7 @@ body {
   font-weight: bold;
 }
 
-.m-container.chatroom .modal {
+/* .m-container.chatroom .modal {
   display: none;
   position: fixed;
   -webkit-box-sizing: border-box;
@@ -235,5 +235,61 @@ body {
 
 .m-container.chatroom .modal-on {
   display: block;
+} */
+
+
+.icon-post-modal {
+  display: none;
+  position: fixed;
+  width: 390px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+}
+
+.icon-post-modal .modalBox {
+  width: 390px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-bottom: 10px;
+  -webkit-transition: 2s all;
+  transition: 2s all;
+}
+
+.modalBox .topBar {
+  width: 50px;
+  height: 4px;
+  margin: 16px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #DBDBDB;
+  cursor: pointer;
+}
+
+.modalBox .deleteBox, 
+.modalBox .modifyBox {
+  width: 390px;
+  height: 46px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 14px 26px;
+  font-size: 14px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=kmh_06_Chat_Room.css.map */

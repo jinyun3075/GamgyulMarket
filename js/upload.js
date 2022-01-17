@@ -1,7 +1,9 @@
-let img = document.querySelector('.img');
+
+  let img = document.querySelector('.img');;
   let imgfile = document.querySelector('.img-file');
-  let text = document.querySelector(".text")
-  let submitBtn = document.querySelector(".save")
+  let text = document.querySelector(".text");
+  let submitBtn = document.querySelector(".save");
+  let before = document.querySelector(".arrow");
   let element = [];
   let actionboolean = false;
 
@@ -128,3 +130,4 @@ let img = document.querySelector('.img');
       
   }
   submitBtn.addEventListener('click',createPost)
+  before.onclick = () => {history.back()}

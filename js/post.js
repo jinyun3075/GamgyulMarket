@@ -1,4 +1,7 @@
+// (뒤로가기)
+document.querySelector(".arrow").onclick = () => {history.back()}
 
+// (댓글쓰기 프로필 사진)
 document.querySelector(".comment .icon").style.background = `url(${localStorage.getItem("image")})`;
 document.querySelector(".comment .icon").style.backgroundSize = "36px";
 
@@ -14,10 +17,8 @@ function date_refactoring(date) {
   return date1;
 }
 
-
 // 🐋🐋🐋 나중에 해당 게시물의 id를 받아오도록 바꿔줘야 할 듯
 localStorage.setItem("post_id", "61e43e37848431e191bdc29b"); 
-
 
 // (5.4 게시글 상세)
 get_post();
@@ -91,7 +92,6 @@ async function get_post() {
   });
 }
 
-
 // (7.2 댓글 리스트)
 get_comment();
 async function get_comment() {
@@ -151,7 +151,7 @@ async function get_comment() {
         console.log("7.3 댓글 삭제 API")
         modal.style.display = "block";
         deletebtn.style.display = "block";
-        reportbtn.innerText = "수정";
+        reportbtn.style.display = "none";
         deletebtn.addEventListener('click', async () => {
           let res = await fetch(localStorage.getItem("url")+"post/"+localStorage.getItem("post_id")+"/comments/"+comment_id, {
             method: "DELETE",
@@ -197,7 +197,6 @@ async function get_comment() {
     modal.style.display = "none";
   })
 } 
-
 
 // (7.1 댓글 작성)
 let comment_btn = document.querySelector(".posting"); 

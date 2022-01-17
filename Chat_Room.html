@@ -46,8 +46,19 @@
       <input class="text" placeholder="댓글 입력하기"></input>
       <div class="posting">전송</div>
     </section>
+    <section class="icon-post-modal">
+      <div class="modalBox">
+          <div class="topBar"></div>
+          <div class="deleteBox">채팅방 나가기</div>
+          <div class="modifyBox"></div>
+      </div>
+    </section>
   </section>
 
   <script src="./js/Chat_Room.js"></script>
+  <script>
+    document.querySelector(".arrow").onclick = () => {history.back()}
+    document.querySelector(".deleteBox").onclick = () => {history.back()}
+  </script>
 </body>
 </html>
