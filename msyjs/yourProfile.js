@@ -39,10 +39,12 @@ albumList.addEventListener("click", handleAlbum);
 
 // async await
 
+// localStorage.getItem('post_id', )
+
 async function prolist(){
     const res = await fetch(url+`product/${localStorage.username}`,{
         headers: {
-            "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+            "Authorization" : "Bearer "+localStorage.getItem("key"),
             "Content-Type": "application/json"
         }
     });
@@ -59,7 +61,7 @@ async function prolist(){
 async function mylist() {
     const res = await fetch(url+`post/${localStorage.username}/userpost`, {
         headers: {
-            "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZDU3ODk0NmI4MjE2ZmM1NjY4NzZmYSIsImV4cCI6MTY0NjU2NDI4MiwiaWF0IjoxNjQxMzgwMjgyfQ.tHh7nnvnaQM0dn5LlPJPN8DeL8ecjKaGUsTrv_mbqnE",
+            "Authorization" : "Bearer "+localStorage.getItem("key"),
             "Content-Type": "application/json"
         }
     })
@@ -139,10 +141,10 @@ async function userinfo() {
     const followers = profileMain.querySelector(".followers");
     const followings = profileMain.querySelector(".followings")
     function handleFollowers() {
-        location.href ="../msy_followers.html";
+        location.href ="../followers.html";
     }
     function handleFollowings() {
-        location.href ="../msy_followings.html";
+        location.href ="../followings.html";
     }
     followings.addEventListener("click", handleFollowings);
     followers.addEventListener("click", handleFollowers);
