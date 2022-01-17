@@ -52,8 +52,6 @@
         localStorage.setItem("key", resJson.user.token);
         localStorage.setItem("url", "http://146.56.183.55:5050/");
         localStorage.setItem("username", resJson.user.accountname);
-        localStorage.setItem("email", resJson.user.email);
-        localStorage.setItem("pw", resJson.user.password);
         console.log("로그인");
       }
       const loginForm = document.querySelector(".login-form");
@@ -64,12 +62,10 @@
 
       function loginSub(event) {
         event.preventDefault();
-        const getEmail = localStorage.getItem("email");
-        const getPw = localStorage.getItem("pw");
 
-        if (getEmail !== null && getPw !== null) {
+        if (email.value !== null && pw.value !== null) {
           alert("login success");
-          location.href = "kmh_03_Home.html";
+          location.href = "home.html";
         } else {
           errMsg.hidden = false;
         }
