@@ -47,6 +47,10 @@ body {
   height: 24px;
 }
 
+.m-container.chat .chatlink {
+  cursor: pointer;
+}
+
 .m-container.chat .chat {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
