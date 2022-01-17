@@ -69,7 +69,7 @@ async function mylist() {
         homePostSection.innerHTML += `<section class="home-post">
         <section class="leftSide">
             <button type="button" class="proPic">
-                <img src="${resJson.post[index].author}" alt="프로필이미지">
+                <img src="${resJson.post[index].author.image}" alt="프로필이미지">
             </button>
         </section>
         <section class="rightSide">
@@ -137,10 +137,15 @@ async function userinfo() {
     `
     const followButton = profileMain.querySelector("#followbtn");
     const followers = profileMain.querySelector(".followers");
-    function handleFollwers() {
+    const followings = profileMain.querySelector(".followings")
+    function handleFollowers() {
         location.href ="../msy_followers.html";
     }
-    followers.addEventListener("click", handleFollwers);
+    function handleFollowings() {
+        location.href ="../msy_followings.html";
+    }
+    followings.addEventListener("click", handleFollowings);
+    followers.addEventListener("click", handleFollowers);
     
     function handleFollow() {
         if (followButton.textContent === '팔로우'){
