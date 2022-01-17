@@ -11,9 +11,7 @@
 
 /* 나중에 삭제하기 */
 body {
-  border: 1px solid black;
   width: 390px;
-  height: 919px;
 }
 .homepostBox {
   overflow: scroll;
