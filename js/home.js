@@ -7,7 +7,6 @@ const cont = document.querySelector(".homepostBox");
                 }
             })
             resJson = await res.json();
-            // resJson = {}; // 없을때
             if(!resJson.post){
                 cont.innerHTML =
                 `
@@ -18,7 +17,7 @@ const cont = document.querySelector(".homepostBox");
                 </div>`
                 const mbtn = document.querySelector(".M-button");
                 mbtn.addEventListener("click",()=>{
-                    location.href= "sjy_02_search-1.html";
+                    location.href= "search.html";
                 })
             }else{
                 cont.innerHTML=""  
