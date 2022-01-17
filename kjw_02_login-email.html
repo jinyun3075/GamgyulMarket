@@ -26,7 +26,6 @@
         <a href="kjw_03_join-membership.html">이메일로 회원가입하기</a>
       </div>
     </div>
-    <script src="js_(junwoo)/kjw_02_login-email.js"></script>
     <script>
       const body = document.querySelector("body");
       const email = body.querySelector("#email");
@@ -53,8 +52,29 @@
         localStorage.setItem("key", resJson.user.token);
         localStorage.setItem("url", "http://146.56.183.55:5050/");
         localStorage.setItem("username", resJson.user.accountname);
+        localStorage.setItem("email", resJson.user.email);
+        localStorage.setItem("pw", resJson.user.password);
         console.log("로그인");
       }
+      const loginForm = document.querySelector(".login-form");
+      const errMsg = loginForm.querySelector(".error-msg");
+      const btn = document.querySelector(".btn");
+
+      errMsg.hidden = true;
+
+      function loginSub(event) {
+        event.preventDefault();
+        const getEmail = localStorage.getItem("email");
+        const getPw = localStorage.getItem("pw");
+
+        if (getEmail !== null && getPw !== null) {
+          alert("login success");
+          location.href = "kmh_03_Home.html";
+        } else {
+          errMsg.hidden = false;
+        }
+      }
+      loginForm.addEventListener("submit", loginSub);
     </script>
   </body>
 </html>
