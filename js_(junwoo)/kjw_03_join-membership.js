@@ -111,7 +111,7 @@ function loginSub2(event) {
     errMsg["1"].classList.remove("hidden");
     errMsg["1"].innerText = "영문, 숫자, 특수문자(.),(_)만 사용 가능합니다.";
   } else {
-    location.href = "kmh_03_Home.html";
+    location.href = "home.html";
   }
 }
 loginForm2.addEventListener("submit", loginSub2);
