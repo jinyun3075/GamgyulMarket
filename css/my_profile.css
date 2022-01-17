@@ -450,6 +450,9 @@ section.rightSide .menuWrap {
 }
 
 /* content */
+.rightSide {
+    cursor: pointer;
+}
 .rightSide .cntTxt p {
     font-family: 'Spoqa Han Sans Neo';
     font-size: 14px;
@@ -612,6 +615,7 @@ button {
     background: #F26E22;
 }
 .yourprofile {
+    margin-bottom: 1rem;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 25rem;

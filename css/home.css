@@ -169,6 +169,9 @@ section.rightSide .menuWrap {
   line-height: 18px;
   margin-bottom: 16px;
 }
+.rightSide {
+  cursor: pointer;
+}
 
 .rightSide .cntImg img {
   width: 304px;

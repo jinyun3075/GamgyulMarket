@@ -27,6 +27,7 @@ const cont = document.querySelector(".homepostBox");
                     if(data.hearted) {
                         heart = '<button class="heatbtn on" type="button"><img src="../img/icon-heart2.png" alt="좋아요아이콘"></button>'
                     }
+                    const date = JSON.stringify(data.updatedAt).split('-');
                     cont.innerHTML += 
                     `<section class="home-post">
                         <section class="leftSide">
@@ -57,11 +58,19 @@ const cont = document.querySelector(".homepostBox");
                                     <p>${data.commentCount}</p>
                                 </div>
                             </div>
-                        <p class="date">${data.createdAt}</p>
+                        <p class="date">${date[0].slice(1,5)}년 ${date[1]}월 ${date[2].slice(1,2)}일</p>
                         </section>
                     </section> `
                 }
+                let $cntImg = cont.querySelectorAll('.cntImg');
                 let heartbtn = cont.querySelectorAll('.heatbtn');
+                for (const object of $cntImg) {    
+                    object.onclick = (e)=>{
+                        const id = e.target.parentNode.parentNode.querySelector('input').value;
+                        localStorage.getItem('post_id',id);
+                        location.href = 'post.html';
+                    };
+                }
                 for (const object of heartbtn) {    
                         object.onclick = (e)=>{
                         const btn = e.target;

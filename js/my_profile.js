@@ -10,7 +10,7 @@ const $modal = $body.querySelector('.icon-post-modal');
 const $back = $body.querySelector('.leftArrow');
 const $home = $body.querySelector('.home');
 $home.onclick = ()=> {
-    location.href = "sjy_01_home-2.html";
+    location.href = "../home.html";
 }
 $back.onclick = ()=> {
     history.back();
@@ -54,10 +54,10 @@ async function userinfo() {
     const $productupdate = $body.querySelector('.productUpdate');
     const $profileupdate = $body.querySelector('.profileUpdate');
     $productupdate.onclick = ()=>{
-        location.href = "jyj_add_product.html";
+        location.href = "add_product.html";
     }
     $profileupdate.onclick = ()=>{
-        location.href = "msy_profile_modification.html";
+        location.href = "profile_modification.html";
     }
 }
 
@@ -135,6 +135,7 @@ async function mylist() {
             if(data.hearted) {
                 heart = '<button class="heatbtn on" type="button"><img src="../img/icon-heart2.png" alt="좋아요아이콘"></button>'
             }
+            const date = JSON.stringify(data.updatedAt).split('-');
             $cont.innerHTML += 
             `<section class="home-post">
                 <section class="leftSide">
@@ -157,7 +158,7 @@ async function mylist() {
                             <div class="btnWrap">
                                 <div class="btnLike">
                                     ${heart}
-                                    <input type="hidden" value="${data.id}"/>
+                                    <input class="id_in" type="hidden" value="${data.id}"/>
                                     <p>${data.heartCount}</p>
                                 </div>
                             <div class="btnCmt">
@@ -165,12 +166,13 @@ async function mylist() {
                             <p>${data.commentCount}</p>
                         </div>
                     </div>
-                <p class="date">${data.createdAt}</p>
+                <p class="date">${date[0].slice(1,5)}년 ${date[1]}월 ${date[2].slice(1,2)}일</p>
                 </section>
             </section> `
             
         }
         let $heartbtn = $cont.querySelectorAll('.heatbtn');
+        let $cntImg = $cont.querySelectorAll('.cntImg');
         for (const object of $heartbtn) {    
             object.onclick = (e)=>{
                 const btn = e.target;
@@ -184,6 +186,13 @@ async function mylist() {
                     heartCheck(id);
                 }
                 
+            };
+        }
+        for (const object of $cntImg) {    
+            object.onclick = (e)=>{
+                const id = e.target.parentNode.parentNode.querySelector('input').value;
+                localStorage.getItem('post_id',id);
+                location.href = 'post.html';
             };
         }
         // 모달 창
