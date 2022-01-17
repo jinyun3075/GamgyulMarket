@@ -52,6 +52,9 @@
         localStorage.setItem("key", resJson.user.token);
         localStorage.setItem("url", "http://146.56.183.55:5050/");
         localStorage.setItem("username", resJson.user.accountname);
+        localStorage.setItem("image", resJson.user.image);
+        localStorage.setItem("name", resJson.user.username);
+        localStorage.setItem("id", resJson.user._id);
         console.log("로그인");
       }
       const loginForm = document.querySelector(".login-form");
