@@ -46,11 +46,20 @@ function chatevent() {
 }
 
 // (2. 모달창구현) 
-let modal = document.querySelector('.more');
-modal.addEventListener('click', modalevent);
+let more = document.querySelector('.more');
+let modal = document.querySelector('.icon-post-modal'); 
+let exit = modal.querySelector('.topBar');
+let deletebtn = modal.querySelector('.deleteBox');
+let reportbtn = modal.querySelector('.modifyBox');
+more.addEventListener('click', modalevent);
 function modalevent(event) {
-  document.querySelector('.modal').classList.toggle('modal-on');
+  modal.style.display = "block";
+  deletebtn.style.display = "block";
+  reportbtn.style.display = "none";
 } 
+exit.addEventListener('click', () => {
+  modal.style.display = "none";
+})
 
 // (3. 이미지업로드구현)
 let icon = document.querySelector('.icon');
