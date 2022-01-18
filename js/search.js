@@ -7,7 +7,7 @@ const toptap = document.querySelector('.top-search-nav');
             history.back();
         }
         $profile.onclick = ()=> {
-            location.href = "pagemarge_04_my_profile.html";
+            location.href = "my_profile.html";
         }
         search.addEventListener("keydown",async (d)=> {
             const res = await fetch(localStorage.getItem("url")+'user/searchuser/?keyword='+search.value,{

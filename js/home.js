@@ -126,10 +126,10 @@ const cont = document.querySelector(".homepostBox");
         }
         // 이동
         search.addEventListener("click",()=>{
-                    location.href= "sjy_02_search-1.html";
+                    location.href= "search.html";
                 })
         function handleProfileButton() {
-            location.href = "../pagemarge_04_my_profile.html"
+            location.href = "my_profile.html"
         }
 
         profileButton.addEventListener("click", handleProfileButton);
