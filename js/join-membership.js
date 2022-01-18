@@ -6,7 +6,7 @@ const pw = body.querySelector("#pw");
 const username = document.querySelector("#user-name");
 const userId = document.querySelector("#user-id"); //accountname
 const userIntro = document.querySelector("#user-intro");
-const sign = body.querySelector(".btn");
+const sign = body.querySelector("#btn");
 sign.onclick = () => {
   Sign();
 };
@@ -111,7 +111,7 @@ function loginSub2(event) {
     errMsg["1"].classList.remove("hidden");
     errMsg["1"].innerText = "영문, 숫자, 특수문자(.),(_)만 사용 가능합니다.";
   } else {
-    location.href = "home.html";
+    location.href = "index.html";
   }
 }
 loginForm2.addEventListener("submit", loginSub2);

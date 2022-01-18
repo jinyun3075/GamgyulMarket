@@ -51,6 +51,14 @@ async function userinfo() {
             <button class="shareButton"></button>
         </article>
     `
+    const $followers = $body.querySelector('.followers');
+    const $followings = $body.querySelector('.followings');
+    $followers.onclick =()=>{
+        location.href = "followers.html";
+    }
+    $followings.onclick =()=>{
+        location.href = "followings.html";
+    }
     const $productupdate = $body.querySelector('.productUpdate');
     const $profileupdate = $body.querySelector('.profileUpdate');
     $productupdate.onclick = ()=>{
