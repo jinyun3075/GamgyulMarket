@@ -1,5 +1,5 @@
 // API 통신
-const url = "http://146.56.183.55:5050/";
+const url = "https://146.56.183.55:5050/";
 const body = document.querySelector("body");
 const email = body.querySelector("#email");
 const pw = body.querySelector("#pw");
@@ -111,7 +111,7 @@ function loginSub2(event) {
     errMsg["1"].classList.remove("hidden");
     errMsg["1"].innerText = "영문, 숫자, 특수문자(.),(_)만 사용 가능합니다.";
   } else {
-    location.href = "index.html";
+    // location.href = "index.html";
   }
 }
 loginForm2.addEventListener("submit", loginSub2);
