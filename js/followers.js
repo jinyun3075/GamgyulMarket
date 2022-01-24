@@ -11,7 +11,7 @@ const leftArrowButton = profileHeader.querySelector(".leftArrow");
 leftArrowButton.addEventListener("click", ()=>{ history.back()});
 
 
-const url = "http://146.56.183.55:5050/";
+const url = "https://146.56.183.55:5050/";
 
 function handleFollowButton() {
     const followButton = followList.querySelectorAll(".followButton");

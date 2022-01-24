@@ -1,6 +1,6 @@
 // follow, Message, share
 
-const url = "http://146.56.183.55:5050/"
+const url = "https://146.56.183.55:5050/"
 
 
 const profileMain = document.querySelector(".profileMain");

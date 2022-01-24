@@ -6,7 +6,7 @@ sign.onclick = () => {
   login();
 };
 async function login() {
-  const res = await fetch("http://146.56.183.55:5050/user/login", {
+  const res = await fetch("https://146.56.183.55:5050/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ async function login() {
   resJson = await res.json();
   console.log(resJson);
   localStorage.setItem("key", resJson.user.token);
-  localStorage.setItem("url", "http://146.56.183.55:5050/");
+  localStorage.setItem("url", "https://146.56.183.55:5050/");
   localStorage.setItem("username", resJson.user.accountname);
   localStorage.setItem("image", resJson.user.image);
   localStorage.setItem("name", resJson.user.username);
