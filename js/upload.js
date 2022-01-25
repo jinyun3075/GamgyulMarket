@@ -83,7 +83,7 @@
 
   // (BACK-END) 서버에 이미지 올리고, 파일명 받아와서, 포스팅
 
-  const url = "https://146.56.183.55:5050/"
+  const url = "https://api.mandarin.cf/"
 
   async function imageUpload(files,index) {
     const formData = new FormData();

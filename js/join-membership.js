@@ -1,5 +1,5 @@
 // API 통신
-const url = "https://146.56.183.55:5050/";
+const url = "https://api.mandarin.cf/";
 const body = document.querySelector("body");
 const email = body.querySelector("#email");
 const pw = body.querySelector("#pw");
@@ -12,6 +12,11 @@ sign.onclick = () => {
 };
 // 회원가입
 async function Sign() {
+  console.log(email.value)
+  console.log(pw.value)
+  console.log(username.value)
+  console.log(userId.value)
+  console.log(userIntro.value)
   const res = await fetch(url + "user", {
     method: "POST",
     headers: {

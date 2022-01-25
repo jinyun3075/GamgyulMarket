@@ -1,6 +1,6 @@
 // follow, Message, share
 
-const url = "https://146.56.183.55:5050/"
+const url = "https://api.mandarin.cf/"
 
 
 const profileMain = document.querySelector(".profileMain");

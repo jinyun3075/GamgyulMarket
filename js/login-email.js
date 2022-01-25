@@ -21,7 +21,7 @@ async function login() {
     return data.json();
   }).then((data)=> {
     localStorage.setItem("key", data.user.token);
-    localStorage.setItem("url", "https://146.56.183.55:5050/");
+    localStorage.setItem("url", "https://api.mandarin.cf/");
     localStorage.setItem("username", data.user.accountname);
     localStorage.setItem("image", data.user.image);
     localStorage.setItem("name", data.user.username);
