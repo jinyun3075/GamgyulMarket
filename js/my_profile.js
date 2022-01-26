@@ -10,7 +10,7 @@ const $modal = $body.querySelector('.icon-post-modal');
 const $back = $body.querySelector('.leftArrow');
 const $home = $body.querySelector('.home');
 $home.onclick = ()=> {
-    location.href = "../home.html";
+    location.href = "./home.html";
 }
 $back.onclick = ()=> {
     history.back();
@@ -96,14 +96,14 @@ const ProductList = async ()=> {
 
 // 게시물 리스트
 $image1.onclick = ()=>{
-    $image1.src = "../img/icon-post-list-on.png";
-    $image2.src = "../img/icon-post-album-off.png";
+    $image1.src = "./img/icon-post-list-on.png";
+    $image2.src = "./img/icon-post-album-off.png";
     $album.style.display="none";
     $cont.style.display="block"
 }
 $image2.onclick = ()=>{
-    $image1.src = "../img/icon-post-list-off.png";
-    $image2.src = "../img/icon-post-album-on.png";
+    $image1.src = "./img/icon-post-list-off.png";
+    $image2.src = "./img/icon-post-album-on.png";
     $album.style.display="block";
     $cont.style.display="none"
 }
@@ -139,9 +139,9 @@ async function mylist() {
     }else{
         $cont.innerHTML="";
         for (const data of resJson.post) {
-            let heart = '<button class="heatbtn"  type="button"><img src="../img/icon-heart.png" alt="좋아요아이콘"></button>'
+            let heart = '<button class="heatbtn"  type="button"><img src="./img/icon-heart.png" alt="좋아요아이콘"></button>'
             if(data.hearted) {
-                heart = '<button class="heatbtn on" type="button"><img src="../img/icon-heart2.png" alt="좋아요아이콘"></button>'
+                heart = '<button class="heatbtn on" type="button"><img src="./img/icon-heart2.png" alt="좋아요아이콘"></button>'
             }
             const date = JSON.stringify(data.updatedAt).split('-');
             $cont.innerHTML += 
@@ -155,7 +155,7 @@ async function mylist() {
                     <p>${data.author.username}</p>
                     <p>@ naver.com</p>
                     </div>
-                    <button class="menuBtn" type="button"><img src="../img/more-icon.png" alt="더보기아이콘" id="${data.id}"></button>
+                    <button class="menuBtn" type="button"><img src="./img/more-icon.png" alt="더보기아이콘" id="${data.id}"></button>
                     </div>
                     <div class="cntTxt">
                         <p>${data.content}</p>
@@ -170,7 +170,7 @@ async function mylist() {
                                     <p>${data.heartCount}</p>
                                 </div>
                             <div class="btnCmt">
-                            <button type="button"><img src="../img/icon-message-circle.png" alt="댓글아이콘"></button>
+                            <button type="button"><img src="./img/icon-message-circle.png" alt="댓글아이콘"></button>
                             <p>${data.commentCount}</p>
                         </div>
                     </div>
