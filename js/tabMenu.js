@@ -5,16 +5,16 @@ const createButton = tabMenu.querySelector(".create");
 const profileButton = tabMenu.querySelector(".profile");
 
 function handleProfileButton() {
-    location.href = "my_profile.html"
+    location.href = "./my_profile.html"
 }
 function handleChattingButton() {
-    location.href = "Chat_List.html"
+    location.href = "./Chat_List.html"
 }
 function handleCreateButton() {
-    location.href = "upload.html"
+    location.href = "./upload.html"
 }
 function handleHomeButton() {
-    location.href = "your_profile.html"
+    location.href = "./your_profile.html"
 }
 
 profileButton.addEventListener("click", handleProfileButton);

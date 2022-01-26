@@ -123,7 +123,7 @@
       })
       const json = await res.json()
       console.log(json)
-      location.href = "my_profile.html";
+      location.href = "./my_profile.html";
       } else {
         alert("3장 이상은 못올림")
       }
