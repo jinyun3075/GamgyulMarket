@@ -6,7 +6,7 @@ sign.onclick = () => {
   login();
 };
 async function login() {
-  await fetch("https://146.56.183.55:5050/user/login", {
+  await fetch("https://api.mandarin.cf//user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -28,7 +28,6 @@ async function login() {
     localStorage.setItem("id", data.user._id);
     alert("login success");
     location.href = 'home.html';
-    
   }).catch((error)=> {
     alert(error);
   })
