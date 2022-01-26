@@ -6,7 +6,7 @@ sign.onclick = () => {
   login();
 };
 async function login() {
-  await fetch("https://api.mandarin.cf//user/login", {
+  await fetch("https://api.mandarin.cf/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
