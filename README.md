@@ -18,7 +18,7 @@
 
 ### 📌 기술스택
 - HTML, CSS, JS
-- Node-Express
+- Node-Express, MongoDB, Docker
 <br>
 
 ### 📌 서버
