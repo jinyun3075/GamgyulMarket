@@ -23,7 +23,7 @@
 <br>
 
 ### 📌 서버
-- #### [서버REPO](https://github.com/jinyun3075/GamgyulServer/)
+- #### [서버 REPO](https://github.com/jinyun3075/GamgyulServer/)
 <br>
 
 ### 📌 구조
