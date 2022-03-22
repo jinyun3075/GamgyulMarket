@@ -5,6 +5,7 @@
 <br>
 
 ### 👇 프로젝트 결과물
+#### [포트폴리오](https://glow-fortnight-4c2.notion.site/479b665a9b6349a180bf3b0cfaf8c0c0)
 #### [바로가기](https://jinyun3075.github.io/gamgyulmarket/)
 <br>
 
